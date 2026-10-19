@@ -1,0 +1,16 @@
+{
+  "source": "Assets/chinese-temple/source/thor-and-the-midgard-serpent.fbx",
+  "sourceSha256": "d07e642bee4983b4102087b60f094cbae270798469fa8a5c7649935170ccc1c6",
+  "acquiredFile": "Assets/JadeSealDistribution/ApprovedSources/Sketchfab/chinese-temple/source/thor-and-the-midgard-serpent.fbx",
+  "recordedSha256": "D07E642BEE4983B4102087B60F094CBAE270798469FA8A5C7649935170CCC1C6",
+  "sourceAndAcquisitionMatch": true,
+  "creator": "Thomas.Osterhammel",
+  "username": "Thost",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "metadata": "DistributionPreparation/CoordinatedReplacement/LicenseEvidence/01c6a525a8144693b1eb2446f761051c-acquisition.json",
+  "metadataSha256": "fe3a5ff8f55806e262ee42d716041b21261b1660e95b4ff8ae49c8c0724e69b4",
+  "identityBasis": "User-supplied untouched publisher archive plus current listing and Unity mesh identity; 30 legacy academy/temple files byte-identical",
+  "publisherSignedChecksum": false,
+  "notices": "No standalone notice/readme/license file supplied in these archives",
+  "attribution": "DistributionPreparation/FinalClearance/ATTRIBUTION.md"
+}

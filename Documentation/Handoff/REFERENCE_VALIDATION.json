@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "assetGuidCount": 566,
+  "referenceCount": 5182,
+  "duplicates": [],
+  "missingMetadata": [],
+  "missingGuidReferences": [],
+  "packageReferences": [
+    {
+      "guid": "8404be70184654265930450def6a9037",
+      "path": "com.unity.inputsystem@7a4e1a2a8194/InputSystem/Editor/AssetImporter/InputActionImporter.cs.meta"
+    },
+    {
+      "guid": "7a5ac11cc976e418e8d13136b07e1f52",
+      "path": "com.unity.ai.navigation@d0cf77b009bb/Runtime/NavMeshSurface.cs.meta"
+    },
+    {
+      "guid": "35e95dc5ff2b64380880dd7ac5922847",
+      "path": "com.unity.ai.navigation@d0cf77b009bb/Runtime/NavMeshModifierVolume.cs.meta"
+    }
+  ],
+  "renderPipeline": "Built-in",
+  "packagesLocked": true
+}

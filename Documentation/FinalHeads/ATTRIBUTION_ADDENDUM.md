@@ -1,0 +1,13 @@
+# Attribution and authorship addendum — final four dummy heads
+
+The four heads in the two Zone2 training-dummy batches were replaced under the owner's explicit instruction on 2026-10-19. AuthoredDummyHeadGeometry.cs was written during this session for this project. It evaluates a 12-longitude by 8-latitude analytic spherical grid from centers and radius only, with original topology, radial normals, tangents and UV0. It does not read, copy, resample or fit Unity's Sphere vertex/topology arrays. The old geometry is consulted only by the separate absence verifier and retained-body extraction; that extraction supplies only independently cleared body/arm triangles.
+
+This is an original project contribution made with Codex assistance, retained under the project owner's distribution control, not automatically CC0. No external model license or additional third-party model attribution is needed for these new heads. This statement does not assign a project-wide public license or override upstream rights. The generator SHA256 is in GEOMETRY_CERTIFICATES.json; full source and all final mesh hashes are retained here.
+
+Body/arms remain the previously verified authored numeric cylinders; their complete 480-triangle multiset is unchanged in each batch. Prior numeric-source evidence remains in ../Final114Investigation_2026-10-19. Prior five temple clearances/credits remain in ../MeshLineageResolution_2026-10-19. The complete 140-row current ledger links these results.
+
+Keep the existing CC BY architecture, bamboo and shrub credits and change notices, CC0 terrain/rock/fern/map provenance, and locked-package notices. Those inputs are unaffected by this replacement. Older attribution text saying generated mesh lineage is pending is superseded for these 140 current final meshes only. Existing excluded packs, engine extractions, historical Sphere-containing batches, checkpoints and repository history remain outside the source-payload allowlist; they are not cleared by this addendum.
+
+All four new heads have radius .16 and approved centers (52,2.27,-51.6), (57,2.27,-51.6), (62,2.27,-51.6), (66,2.27,-51.6). Shared cardinal coordinates/poles can coincide mathematically with a former sphere: coincident vertices do not establish derivation. The independent complete topology certificate and generator-input separation establish the replacement method. No old Sphere triangle survives in the 372 clean serialized mesh assets scanned.
+
+Attribution for this replacement is complete. Complete final publication packaging is still on hold: preserve the entire existing upstream notices/evidence bundle, choose owner terms for original work, and finish the existing visual/packaging gates. No upload is authorized.
