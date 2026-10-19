@@ -38,3 +38,9 @@ sysinfo.txt
 /Assets/Tree.prefab*
 /Assets/chinese-architecture/
 /Assets/mountain-range-01/
+
+/VerificationRuns/
+/Assets/Editor/FinalHeadResolution.cs*
+/PublicationDocuments_DRAFT/
+
+/.handoff-review/

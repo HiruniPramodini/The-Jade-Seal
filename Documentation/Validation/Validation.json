@@ -1,0 +1,19 @@
+{
+    "passed": true,
+    "collidersUnchanged": true,
+    "transformsUnchanged": true,
+    "materialsUnchanged": true,
+    "scriptsUnchanged": true,
+    "navAssetUnchanged": true,
+    "segments": 274,
+    "navFailures": 0,
+    "missingMaterials": 0,
+    "missingScripts": 0,
+    "brokenReferences": 0,
+    "lightmaps": 3,
+    "probes": 194,
+    "colliderHash": "D62EB9AE8E34DEF33B6CFAF3E49049BEDFAA1C87244423D349178667153D6A9B",
+    "transformHash": "0EA8357F016DB2D2CCA291E6BCFE26ED758F2D6AAEB88091B56C741AF81B1581",
+    "materialHash": "9B70DB05E4A21F5248FB422D6D7952B526D9BC11C1A2648006C1CF41400DEADC",
+    "scriptHash": "BADCA17AE48973B2FDD5985EC89ED12AC736E0C7B56125E0CF7FB12EDF656FBC"
+}

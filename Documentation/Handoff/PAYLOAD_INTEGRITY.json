@@ -1,0 +1,25 @@
+{
+  "algorithm": "SHA256",
+  "createdUtc": "2026-10-19T15:42:48.026Z",
+  "status": "APPROVED_AND_INDEX_VERIFIED_PRIVATE_HANDOVER",
+  "listedPayloadFiles": 1143,
+  "totalCandidateFilesIncludingManifestAndSeal": 1145,
+  "payloadManifestSha256": "489587fa5300a2b0cf7bb663a271092d8781509e0da5132aa38432b67fcd02a4",
+  "selfExclusions": [
+    ".git worktree control file",
+    "Documentation/Handoff/PAYLOAD_MANIFEST.csv",
+    "Documentation/Handoff/PAYLOAD_INTEGRITY.json"
+  ],
+  "sourceAllowlistFiles": 1097,
+  "additionalReviewedSettings": 5,
+  "ownerPrivateSharingConfirmed": true,
+  "visualApprovalsConfirmed": true,
+  "thirdPartyConditionsUnchanged": true,
+  "remoteWriteAuthorized": false,
+  "holds": [],
+  "indexVerificationSnapshot": {
+    "files": 1145,
+    "lfs": 462,
+    "raw": 683
+  }
+}

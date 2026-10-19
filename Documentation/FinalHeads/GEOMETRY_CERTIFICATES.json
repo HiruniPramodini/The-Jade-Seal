@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "generatorSha256": "573c32d7eb46be5a4b933444aba4d9121ae785bb1b1d8b20271e413da54a75da",
+  "certificates": [
+    {
+      "asset": "Assets/JadeSeal/Phase7/Meshes/LightmapUV_776458815ddf31d4b85c3237444bca73_4300000.asset",
+      "oldSha256": "8043181e6ae61bfb96a684db99c01202c60f33698aa7e81e2b635ed8ad70e236",
+      "newSha256": "c6b745d2e2eecc1ab79b1b84c68e449c5a719ee90555da49384ee925d57eb524",
+      "method": "Independent JS analytic 12x8 latitude/longitude sphere reconstruction; complete triangle-position multiset with multiplicity, seam/order independent, tolerance 3e-5 world units. Body triangles exact float identity; topology welded at 1e-5.",
+      "bodyTrianglesExact": 480,
+      "newTriangles": 816,
+      "oldTriangles": 2016,
+      "oldHeadTrianglesRemoved": 1536,
+      "newHeadTriangles": 336,
+      "unexplainedTriangles": 0,
+      "maxPositionError": 0.0000034057324143077494,
+      "oldSphereVertexExactMatches": 66,
+      "heads": [
+        {
+          "center": [
+            52,
+            2.27,
+            -51.6
+          ],
+          "radius": 0.16,
+          "triangles": 168,
+          "weldedVertices": 86,
+          "edges": 252,
+          "euler": 2,
+          "inwardOrDegenerate": 0,
+          "allEdgesTwoFaces": true
+        },
+        {
+          "center": [
+            57,
+            2.27,
+            -51.6
+          ],
+          "radius": 0.16,
+          "triangles": 168,
+          "weldedVertices": 86,
+          "edges": 252,
+          "euler": 2,
+          "inwardOrDegenerate": 0,
+          "allEdgesTwoFaces": true
+        }
+      ]
+    },
+    {
+      "asset": "Assets/JadeSeal/Phase7/Meshes/LightmapUV_6c088a8e2e3d1a74b8f86adc3cbfb526_4300000.asset",
+      "oldSha256": "85d1482989959fd837369d33b1a6070f8c025cdfee743154effd1e4a03ab8af8",
+      "newSha256": "66570723550fdd0f7157d37143e930b7c6bbb909b0e3bd798a42ad1bf2221f20",
+      "method": "Independent JS analytic 12x8 latitude/longitude sphere reconstruction; complete triangle-position multiset with multiplicity, seam/order independent, tolerance 3e-5 world units. Body triangles exact float identity; topology welded at 1e-5.",
+      "bodyTrianglesExact": 480,
+      "newTriangles": 816,
+      "oldTriangles": 2016,
+      "oldHeadTrianglesRemoved": 1536,
+      "newHeadTriangles": 336,
+      "unexplainedTriangles": 0,
+      "maxPositionError": 0.000003662109378410605,
+      "oldSphereVertexExactMatches": 64,
+      "heads": [
+        {
+          "center": [
+            62,
+            2.27,
+            -51.6
+          ],
+          "radius": 0.16,
+          "triangles": 168,
+          "weldedVertices": 86,
+          "edges": 252,
+          "euler": 2,
+          "inwardOrDegenerate": 0,
+          "allEdgesTwoFaces": true
+        },
+        {
+          "center": [
+            66,
+            2.27,
+            -51.6
+          ],
+          "radius": 0.16,
+          "triangles": 168,
+          "weldedVertices": 86,
+          "edges": 252,
+          "euler": 2,
+          "inwardOrDegenerate": 0,
+          "allEdgesTwoFaces": true
+        }
+      ]
+    }
+  ],
+  "scope": "Clean source Assets meshes and serialized source references; excludes engine/Library/old rollback evidence",
+  "cleanMeshesScanned": 372,
+  "oldSphereTriangleMatches": 0,
+  "builtinSphereReferences": [],
+  "other138MeshHashesUnchanged": true
+}
