@@ -58,6 +58,11 @@ namespace JadeSeal.EnemyAI.Core
         [SerializeField] private List<Transform> mountainPatrolPoints = new List<Transform>();
         [SerializeField] private float waypointTolerance = 1.5f;
 
+        public void SetPatrolWaypoints(List<Transform> points)
+        {
+            mountainPatrolPoints = new List<Transform>(points);
+        }
+
         // Components
         private NavMeshAgent navAgent;
         private MountainArcherPerception perception;
@@ -380,6 +385,60 @@ namespace JadeSeal.EnemyAI.Core
                 Gizmos.DrawWireSphere(leadPoint, 0.4f);
                 Gizmos.DrawLine(center + Vector3.up * 1.5f, leadPoint);
             }
+        }
+
+        private void OnGUI()
+        {
+            GUILayout.BeginArea(new Rect(20, 20, 320, 240), GUI.skin.box);
+            GUILayout.Label("<color=#00FF99><b>🏹 MOUNTAIN ARCHER AI (SE3062)</b></color>", new GUIStyle(GUI.skin.label) { richText = true, fontSize = 14 });
+            GUILayout.Label($"<b>Behavior State:</b> <color=yellow>{CurrentState}</color>", new GUIStyle(GUI.skin.label) { richText = true });
+            
+            float speed = navAgent != null ? navAgent.velocity.magnitude : 0f;
+            GUILayout.Label($"<b>Locomotion Speed:</b> {speed:F2} m/s");
+
+            if (perception != null && perception.CurrentTarget != null)
+            {
+                float dist = Vector3.Distance(transform.position, perception.CurrentTarget.position);
+                string losColor = perception.HasLineOfSight ? "green" : "red";
+                GUILayout.Label($"<b>Target Distance:</b> {dist:F1} m (LOS: <color={losColor}>{(perception.HasLineOfSight ? "CLEAR" : "BLOCKED")}</color>)", new GUIStyle(GUI.skin.label) { richText = true });
+                GUILayout.Label($"<b>Target Velocity:</b> {targetVelocity.magnitude:F1} m/s");
+            }
+            else
+            {
+                GUILayout.Label("<b>Target:</b> <color=gray>No target detected (Patrolling Mountain Pass)</color>", new GUIStyle(GUI.skin.label) { richText = true });
+            }
+
+            GUILayout.Space(6);
+            if (GUILayout.Button("Create / Move Dummy Target Near Archer (7m)"))
+            {
+                TriggerTestTarget(7f);
+            }
+            if (GUILayout.Button("Move Dummy Target Far Away (16m)"))
+            {
+                TriggerTestTarget(16f);
+            }
+
+            GUILayout.EndArea();
+        }
+
+        private void TriggerTestTarget(float distance)
+        {
+            GameObject testTarget = GameObject.Find("Test_Player_Target");
+            if (testTarget == null)
+            {
+                testTarget = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+                testTarget.name = "Test_Player_Target";
+                testTarget.tag = "Player";
+                testTarget.GetComponent<Renderer>().material.color = Color.cyan;
+            }
+
+            Vector3 targetPos = transform.position + transform.forward * distance;
+            if (NavMesh.SamplePosition(targetPos, out NavMeshHit hit, 5f, NavMesh.AllAreas))
+            {
+                targetPos = hit.position;
+            }
+            testTarget.transform.position = targetPos;
+            perception.SetTarget(testTarget.transform);
         }
 
         #endregion

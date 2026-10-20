@@ -50,12 +50,14 @@ namespace JadeSeal.EnemyAI.Editor
 
             // Core AI Components
             archerObj.AddComponent<MountainArcherPerception>();
-            archerObj.AddComponent<MountainArcherAgent>();
+            var agent = archerObj.AddComponent<MountainArcherAgent>();
             archerObj.AddComponent<MountainArcherVisualizer>();
 
             // Setup Waypoints Group for Mountain Pass
             GameObject waypointGroup = new GameObject("MountainArcher_Waypoints");
             waypointGroup.transform.position = spawnPosition;
+            var waypointsList = new System.Collections.Generic.List<Transform>();
+
             for (int i = 0; i < 3; i++)
             {
                 float angle = i * (360f / 3f) * Mathf.Deg2Rad;
@@ -67,13 +69,27 @@ namespace JadeSeal.EnemyAI.Editor
                 GameObject wp = new GameObject($"Waypoint_{i + 1}");
                 wp.transform.position = wpPos;
                 wp.transform.SetParent(waypointGroup.transform);
+                waypointsList.Add(wp.transform);
+            }
+
+            // Assign patrol waypoints directly to agent
+            agent.SetPatrolWaypoints(waypointsList);
+
+            // Ensure Main Camera looks at Archer in Game View
+            Camera mainCam = Camera.main;
+            if (mainCam != null)
+            {
+                mainCam.transform.position = spawnPosition + Vector3.back * 6f + Vector3.up * 3f;
+                mainCam.transform.LookAt(spawnPosition + Vector3.up * 1.2f);
             }
 
             Selection.activeGameObject = archerObj;
+            SceneView.lastActiveSceneView?.FrameSelected();
+
             Undo.RegisterCreatedObjectUndo(archerObj, "Spawn Mountain Archer Agent");
             Undo.RegisterCreatedObjectUndo(waypointGroup, "Spawn Mountain Archer Waypoints");
 
-            Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully spawned Mountain Archer Agent at {spawnPosition} with NavMeshAgent, Perception, and Visualizer!</color>");
+            Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully spawned Mountain Archer Agent at {spawnPosition} with auto-patrol waypoints and camera alignment!</color>");
         }
     }
 }
