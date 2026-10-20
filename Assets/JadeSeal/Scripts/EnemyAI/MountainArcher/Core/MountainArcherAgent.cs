@@ -389,31 +389,38 @@ namespace JadeSeal.EnemyAI.Core
 
         private void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(20, 20, 320, 240), GUI.skin.box);
-            GUILayout.Label("<color=#00FF99><b>🏹 MOUNTAIN ARCHER AI (SE3062)</b></color>", new GUIStyle(GUI.skin.label) { richText = true, fontSize = 14 });
-            GUILayout.Label($"<b>Behavior State:</b> <color=yellow>{CurrentState}</color>", new GUIStyle(GUI.skin.label) { richText = true });
-            
+            GUI.Box(new Rect(20, 20, 360, 250), GUIContent.none);
+            GUILayout.BeginArea(new Rect(25, 25, 350, 240));
+
+            GUIStyle titleStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 14, fontStyle = FontStyle.Bold };
+            GUIStyle textStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 12 };
+
+            GUILayout.Label("<color=#00FF99>🏹 MOUNTAIN ARCHER AI (SE3062)</color>", titleStyle);
+            GUILayout.Label($"<b>Behavior State:</b> <color=yellow>{CurrentState}</color>", textStyle);
+
             float speed = navAgent != null ? navAgent.velocity.magnitude : 0f;
-            GUILayout.Label($"<b>Locomotion Speed:</b> {speed:F2} m/s");
+            GUILayout.Label($"<b>Locomotion Speed:</b> {speed:F2} m/s", textStyle);
 
             if (perception != null && perception.CurrentTarget != null)
             {
                 float dist = Vector3.Distance(transform.position, perception.CurrentTarget.position);
-                string losColor = perception.HasLineOfSight ? "green" : "red";
-                GUILayout.Label($"<b>Target Distance:</b> {dist:F1} m (LOS: <color={losColor}>{(perception.HasLineOfSight ? "CLEAR" : "BLOCKED")}</color>)", new GUIStyle(GUI.skin.label) { richText = true });
-                GUILayout.Label($"<b>Target Velocity:</b> {targetVelocity.magnitude:F1} m/s");
+                string losColor = perception.HasLineOfSight ? "#00FF66" : "#FF4444";
+                string losText = perception.HasLineOfSight ? "CLEAR" : "BLOCKED";
+                GUILayout.Label($"<b>Target Distance:</b> {dist:F1} m (LOS: <color={losColor}><b>{losText}</b></color>)", textStyle);
+                GUILayout.Label($"<b>Target Velocity:</b> {targetVelocity.magnitude:F1} m/s", textStyle);
             }
             else
             {
-                GUILayout.Label("<b>Target:</b> <color=gray>No target detected (Patrolling Mountain Pass)</color>", new GUIStyle(GUI.skin.label) { richText = true });
+                GUILayout.Label("<b>Target:</b> <color=gray>Patrolling Mountain Pass</color>", textStyle);
             }
 
-            GUILayout.Space(6);
-            if (GUILayout.Button("Create / Move Dummy Target Near Archer (7m)"))
+            GUILayout.Space(8);
+            if (GUILayout.Button("⚡ Trigger Player Rush (7m - Test Kiting)", GUILayout.Height(30)))
             {
-                TriggerTestTarget(7f);
+                TriggerTestTarget(6.5f);
             }
-            if (GUILayout.Button("Move Dummy Target Far Away (16m)"))
+            GUILayout.Space(4);
+            if (GUILayout.Button("🎯 Move Player Far (16m - Test Archery)", GUILayout.Height(30)))
             {
                 TriggerTestTarget(16f);
             }
