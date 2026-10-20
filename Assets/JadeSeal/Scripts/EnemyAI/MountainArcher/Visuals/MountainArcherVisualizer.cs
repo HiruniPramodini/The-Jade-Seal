@@ -46,6 +46,17 @@ namespace JadeSeal.EnemyAI.Visuals
                 characterAnimator = GetComponentInChildren<Animator>();
             }
 
+            Transform model3D = transform.Find("MountainArcher_3DModel");
+            if (model3D != null)
+            {
+                Transform oldCapsule = transform.Find("ArcherPrototypeVisuals");
+                if (oldCapsule != null)
+                {
+                    if (Application.isPlaying) Destroy(oldCapsule.gameObject);
+                    else DestroyImmediate(oldCapsule.gameObject);
+                }
+            }
+
             BuildProceduralPrototypeIfNeeded();
         }
 
@@ -117,7 +128,21 @@ namespace JadeSeal.EnemyAI.Visuals
 
         private void BuildProceduralPrototypeIfNeeded()
         {
-            if (characterAnimator != null || visualRoot != null) return;
+            // If a real 3D model exists, destroy any leftover prototype capsule and exit
+            Transform model3D = transform.Find("MountainArcher_3DModel");
+            Transform existingCapsule = transform.Find("ArcherPrototypeVisuals");
+
+            if (model3D != null || characterAnimator != null)
+            {
+                if (existingCapsule != null)
+                {
+                    if (Application.isPlaying) Destroy(existingCapsule.gameObject);
+                    else DestroyImmediate(existingCapsule.gameObject);
+                }
+                return;
+            }
+
+            if (visualRoot != null || existingCapsule != null) return;
 
             // Create clean prototype visuals: Capsule body + Head + Bow prop
             GameObject rootObj = new GameObject("ArcherPrototypeVisuals");
