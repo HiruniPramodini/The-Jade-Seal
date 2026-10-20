@@ -53,6 +53,9 @@ namespace JadeSeal.EnemyAI.Editor
             var agent = archerObj.AddComponent<MountainArcherAgent>();
             archerObj.AddComponent<MountainArcherVisualizer>();
 
+            // Try to load downloaded 3D Archer Model
+            AttachModelToArcher(archerObj);
+
             // Setup Waypoints Group for Mountain Pass
             GameObject waypointGroup = new GameObject("MountainArcher_Waypoints");
             waypointGroup.transform.position = spawnPosition;
@@ -89,7 +92,57 @@ namespace JadeSeal.EnemyAI.Editor
             Undo.RegisterCreatedObjectUndo(archerObj, "Spawn Mountain Archer Agent");
             Undo.RegisterCreatedObjectUndo(waypointGroup, "Spawn Mountain Archer Waypoints");
 
-            Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully spawned Mountain Archer Agent at {spawnPosition} with auto-patrol waypoints and camera alignment!</color>");
+            Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully spawned Mountain Archer Agent with 3D character model at {spawnPosition}!</color>");
+        }
+
+        [MenuItem("The Jade Seal/AI/Attach Downloaded 3D Model to Archer", false, 11)]
+        public static void AttachModelToExistingArcher()
+        {
+            var archer = Object.FindFirstObjectByType<MountainArcherAgent>();
+            if (archer == null)
+            {
+                Debug.LogWarning("[MountainArcher] No Mountain Archer Agent found in scene. Click 'Spawn Mountain Archer in Scene' first.");
+                return;
+            }
+
+            AttachModelToArcher(archer.gameObject);
+            Debug.Log("<color=#00FF99><b>[MountainArcher]</b> Replaced capsule with 3D Archer Model successfully!</color>");
+        }
+
+        private static void AttachModelToArcher(GameObject archerObj)
+        {
+            // Remove existing prototype capsule if present
+            Transform oldVisuals = archerObj.transform.Find("ArcherPrototypeVisuals");
+            if (oldVisuals != null)
+            {
+                Object.DestroyImmediate(oldVisuals.gameObject);
+            }
+
+            // Remove previous model if already attached
+            Transform oldModel = archerObj.transform.Find("MountainArcher_3DModel");
+            if (oldModel != null)
+            {
+                Object.DestroyImmediate(oldModel.gameObject);
+            }
+
+            // Load and instantiate MountainArcher_Model.fbx
+            string modelPath = "Assets/JadeSeal/Characters/MountainArcher/MountainArcher_Model.fbx";
+            GameObject modelPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(modelPath);
+
+            if (modelPrefab != null)
+            {
+                GameObject modelInstance = (GameObject)PrefabUtility.InstantiatePrefab(modelPrefab, archerObj.transform);
+                modelInstance.name = "MountainArcher_3DModel";
+                modelInstance.transform.localPosition = Vector3.zero;
+                modelInstance.transform.localRotation = Quaternion.identity;
+                modelInstance.transform.localScale = Vector3.one;
+
+                Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully attached '{modelPrefab.name}' to {archerObj.name}!</color>");
+            }
+            else
+            {
+                Debug.LogWarning($"[MountainArcher] 3D Model not found at path: {modelPath}");
+            }
         }
     }
 }
