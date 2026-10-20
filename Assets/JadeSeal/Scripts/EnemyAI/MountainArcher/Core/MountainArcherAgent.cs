@@ -41,6 +41,13 @@ namespace JadeSeal.EnemyAI.Core
         [Tooltip("Search radius when seeking high ground vantage points.")]
         [SerializeField] private float tacticalSearchRadius = 15f;
 
+        [Header("Locomotion Speeds")]
+        [Tooltip("Patrol walking speed in m/s.")]
+        [SerializeField] private float walkSpeed = 2.4f;
+
+        [Tooltip("Retreating and chasing sprint speed in m/s.")]
+        [SerializeField] private float runSpeed = 5.0f;
+
         [Header("Combat & Archery")]
         [SerializeField] private float shootCooldown = 2.2f;
         [SerializeField] private float aimDrawDuration = 0.8f;
@@ -177,6 +184,7 @@ namespace JadeSeal.EnemyAI.Core
                 out Vector3 kitePos))
             {
                 navAgent.isStopped = false;
+                navAgent.speed = runSpeed;
                 navAgent.SetDestination(kitePos);
                 return NodeState.RUNNING;
             }
@@ -262,6 +270,7 @@ namespace JadeSeal.EnemyAI.Core
             {
                 currentVantageTarget = bestVantage;
                 navAgent.isStopped = false;
+                navAgent.speed = runSpeed;
                 navAgent.SetDestination(bestVantage);
 
                 if (Vector3.Distance(transform.position, bestVantage) <= waypointTolerance)
@@ -289,6 +298,7 @@ namespace JadeSeal.EnemyAI.Core
             }
 
             navAgent.isStopped = false;
+            navAgent.speed = walkSpeed;
             Transform targetWaypoint = mountainPatrolPoints[currentWaypointIndex];
             navAgent.SetDestination(targetWaypoint.position);
 
