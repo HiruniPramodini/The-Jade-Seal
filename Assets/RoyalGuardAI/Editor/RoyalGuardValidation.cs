@@ -24,12 +24,13 @@ namespace JadeSeal.RoyalGuard.Editor
             var boltAsset = PrefabUtility.SaveAsPrefabAsset(bolt, Root + "/Prefabs/RoyalGuardBolt.prefab"); UnityEngine.Object.DestroyImmediate(bolt);
             var guard = new GameObject("RoyalGuard_PLACEHOLDER");
             var agent = guard.AddComponent<NavMeshAgent>(); agent.speed = 3.5f; agent.height = 2; agent.radius = .4f; agent.stoppingDistance = .35f;
+            guard.layer = 2;
             guard.AddComponent<RoyalGuardHealth>();
             var weapon = guard.AddComponent<RoyalGuardCrossbow>();
             var brain = guard.AddComponent<RoyalGuardBrain>(); brain.settings = settings;
             guard.AddComponent<RoyalGuardPresentation>();
             var body = GameObject.CreatePrimitive(PrimitiveType.Capsule); body.name = "TemporaryVisual_ReplaceWithLicensedModel";
-            body.transform.SetParent(guard.transform, false); body.transform.localPosition = Vector3.up;
+            body.layer = 2; body.transform.SetParent(guard.transform, false); body.transform.localPosition = Vector3.up;
             body.transform.localScale = new Vector3(.8f, 1, .8f);
             // Keep a collider for the team weapon's damage raycast; no dynamic body fights the agent.
             var eyes = new GameObject("Eyes").transform; eyes.SetParent(guard.transform, false); eyes.localPosition = Vector3.up * 1.65f;
@@ -91,3 +92,4 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
+

@@ -6,14 +6,14 @@ namespace JadeSeal.RoyalGuard
     public sealed class RoyalGuardNavigation : MonoBehaviour
     {
         NavMeshAgent agent;
-        readonly NavMeshPath path = new NavMeshPath();
+        NavMeshPath path;
         Vector3 checkpoint;
         float nextPlan, progressAt;
         public bool Failed { get; private set; }
         public bool Ready => agent && agent.enabled && agent.isOnNavMesh;
         public bool Arrived => Ready && !agent.pathPending && !agent.isPathStale &&
             (!agent.hasPath || agent.remainingDistance <= agent.stoppingDistance + .25f);
-        void Awake() { agent = GetComponent<NavMeshAgent>(); checkpoint = transform.position; progressAt = Time.time; }
+        void Awake() { path = new NavMeshPath(); agent = GetComponent<NavMeshAgent>(); checkpoint = transform.position; progressAt = Time.time; }
         public bool Validate(Vector3 destination, out Vector3 sampled, out float length)
         {
             sampled = destination; length = 0;
@@ -41,4 +41,5 @@ namespace JadeSeal.RoyalGuard
         public void Stop() { if (Ready) { agent.isStopped = true; agent.ResetPath(); } }
     }
 }
+
 
