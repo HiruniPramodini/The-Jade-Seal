@@ -33,10 +33,18 @@ namespace JadeSeal.EnemyAI.Sensory
         [Tooltip("How long the archer remembers the target position after losing LOS.")]
         [SerializeField] private float memoryDuration = 5f;
 
+        [Header("Acoustic Investigation")]
+        [Tooltip("How long a sound disturbance is investigated before clearing.")]
+        [SerializeField] private float soundAlertDuration = 6f;
+
         // Current Sensory State
         public Transform CurrentTarget { get; private set; }
         public Vector3 LastKnownPosition { get; private set; }
         public bool HasLineOfSight { get; private set; }
+        public bool HasVisualContact { get; private set; }
+        public bool HasAuditoryDisturbance { get; private set; }
+        public Vector3 LastSoundPosition { get; private set; }
+        public float SoundInvestigationTimer { get; private set; }
         public bool IsTargetPerceived { get; private set; }
         public float TargetLostTimer { get; private set; }
 
@@ -100,24 +108,46 @@ namespace JadeSeal.EnemyAI.Sensory
                 }
             }
 
-            // 3. Acoustic / Hearing Check (Detects close proximity even outside FOV)
+            // 3. Acoustic / Hearing Check (Detects disturbance even behind walls/obstacles)
             if (distanceToPlayer <= hearingRange)
             {
                 acousticAlert = true;
             }
 
-            // 4. Update Memory & Tracking
-            if (directVision || acousticAlert)
+            // 4. Update Sensory Fusion & Target Memory
+            if (directVision)
             {
+                // Visual contact: confirmed target, direct line of sight
                 CurrentTarget = playerTransform;
                 LastKnownPosition = playerTransform.position;
-                HasLineOfSight = directVision;
+                HasLineOfSight = true;
+                HasVisualContact = true;
                 IsTargetPerceived = true;
+                HasAuditoryDisturbance = false; // Visual supersedes sound
                 TargetLostTimer = memoryDuration;
+            }
+            else if (acousticAlert)
+            {
+                // Sound heard behind obstacle/wall without visual contact
+                HasVisualContact = false;
+                HasLineOfSight = false;
+                HasAuditoryDisturbance = true;
+                LastSoundPosition = playerTransform.position;
+                SoundInvestigationTimer = soundAlertDuration;
+                
+                // Do NOT grant omniscient visual lock!
+                if (TargetLostTimer <= 0f)
+                {
+                    CurrentTarget = null;
+                    IsTargetPerceived = false;
+                }
             }
             else
             {
                 HasLineOfSight = false;
+                HasVisualContact = false;
+
+                // Decay visual memory timer
                 if (TargetLostTimer > 0f)
                 {
                     TargetLostTimer -= Time.deltaTime;
@@ -128,7 +158,32 @@ namespace JadeSeal.EnemyAI.Sensory
                     IsTargetPerceived = false;
                     CurrentTarget = null;
                 }
+
+                // Decay sound investigation timer
+                if (SoundInvestigationTimer > 0f)
+                {
+                    SoundInvestigationTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    HasAuditoryDisturbance = false;
+                }
             }
+        }
+
+        public void TriggerSoundDisturbance(Vector3 soundOrigin)
+        {
+            if (HasVisualContact) return; // Ignore sound if already engaging visually
+            HasAuditoryDisturbance = true;
+            LastSoundPosition = soundOrigin;
+            SoundInvestigationTimer = soundAlertDuration;
+            Debug.Log($"<color=yellow>[MountainArcherPerception]</color> Detected suspicious noise at {soundOrigin}!");
+        }
+
+        public void ClearAuditoryDisturbance()
+        {
+            HasAuditoryDisturbance = false;
+            SoundInvestigationTimer = 0f;
         }
 
         public void SetTarget(Transform target)

@@ -12,6 +12,8 @@ namespace JadeSeal.EnemyAI.Core
     {
         Idle,
         Patrol,
+        InvestigateSound,
+        Search,
         Chase,
         Kiting,
         Aiming,
@@ -140,6 +142,11 @@ namespace JadeSeal.EnemyAI.Core
                 {
                     new BTActionNode(CheckShouldChaseOrReposition),
                     new BTActionNode(ExecuteChaseAndReposition)
+                }),
+                new BTSequence(new List<BTNode>
+                {
+                    new BTActionNode(CheckShouldInvestigateSound),
+                    new BTActionNode(ExecuteSoundInvestigation)
                 }),
                 new BTActionNode(ExecuteMountainPatrol)
             };
@@ -350,6 +357,48 @@ namespace JadeSeal.EnemyAI.Core
             return NodeState.RUNNING;
         }
 
+        private NodeState CheckShouldInvestigateSound()
+        {
+            if (perception.HasVisualContact) return NodeState.FAILURE;
+            return perception.HasAuditoryDisturbance ? NodeState.SUCCESS : NodeState.FAILURE;
+        }
+
+        private float soundSearchTimer = 0f;
+        private NodeState ExecuteSoundInvestigation()
+        {
+            Vector3 soundPos = perception.LastSoundPosition;
+            float distToSound = Vector3.Distance(transform.position, soundPos);
+
+            if (distToSound > 2.2f && soundSearchTimer <= 0f)
+            {
+                // Move cautiously towards suspicious sound origin
+                CurrentState = ArcherState.InvestigateSound;
+                navAgent.isStopped = false;
+                navAgent.speed = walkSpeed * 1.15f;
+                navAgent.SetDestination(soundPos);
+                return NodeState.RUNNING;
+            }
+            else
+            {
+                // Reached sound source: Search / look around
+                CurrentState = ArcherState.Search;
+                navAgent.isStopped = true;
+                soundSearchTimer += Time.deltaTime;
+
+                // Subtle scan turning to inspect angles
+                float scanAngle = Mathf.Sin(soundSearchTimer * 2.5f) * 35f;
+                transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + scanAngle * Time.deltaTime, 0);
+
+                if (soundSearchTimer >= 3.0f)
+                {
+                    soundSearchTimer = 0f;
+                    perception.ClearAuditoryDisturbance();
+                    return NodeState.SUCCESS;
+                }
+                return NodeState.RUNNING;
+            }
+        }
+
         private NodeState ExecuteMountainPatrol()
         {
             CurrentState = ArcherState.Patrol;
@@ -485,7 +534,7 @@ namespace JadeSeal.EnemyAI.Core
 
             GUILayout.Label("<color=#00FF99>🏹 MOUNTAIN ARCHER AI (SE3062)</color>", titleStyle);
             
-            string stateColor = (CurrentState == ArcherState.Dead) ? "#FF0000" : (CurrentState == ArcherState.Shooting ? "#FF9900" : "yellow");
+            string stateColor = (CurrentState == ArcherState.Dead) ? "#FF0000" : (CurrentState == ArcherState.Shooting ? "#FF9900" : (CurrentState == ArcherState.InvestigateSound || CurrentState == ArcherState.Search ? "#00CCFF" : "yellow"));
             GUILayout.Label($"<b>Behavior State:</b> <color={stateColor}>{CurrentState}</color>", textStyle);
 
             if (health != null)
@@ -503,6 +552,11 @@ namespace JadeSeal.EnemyAI.Core
                 string losText = perception.HasLineOfSight ? "CLEAR" : "BLOCKED";
                 GUILayout.Label($"<b>Target Distance:</b> {dist:F1} m (LOS: <color={losColor}><b>{losText}</b></color>)", textStyle);
                 GUILayout.Label($"<b>Target Velocity:</b> {targetVelocity.magnitude:F1} m/s", textStyle);
+            }
+            else if (perception != null && perception.HasAuditoryDisturbance)
+            {
+                float soundDist = Vector3.Distance(transform.position, perception.LastSoundPosition);
+                GUILayout.Label($"<b>Acoustic Disturbance:</b> <color=#00CCFF>{soundDist:F1}m away</color>", textStyle);
             }
             else
             {
@@ -532,12 +586,27 @@ namespace JadeSeal.EnemyAI.Core
                 TriggerTestTarget(16f);
             }
             GUILayout.Space(2);
+            if (GUILayout.Button("👂 Noise Behind Rock (Sound Investigate)", GUILayout.Height(26)))
+            {
+                SimulateNoiseBehindRock();
+            }
+            GUILayout.Space(2);
             if (GUILayout.Button("⚔️ Simulate Player Attack (-25 HP on Archer)", GUILayout.Height(26)))
             {
                 if (health != null) health.TakeDamage(25f);
             }
 
             GUILayout.EndArea();
+        }
+
+        public void SimulateNoiseBehindRock()
+        {
+            Vector3 noisePoint = transform.position + transform.right * 9f + transform.forward * 4f;
+            if (NavMesh.SamplePosition(noisePoint, out NavMeshHit hit, 8f, NavMesh.AllAreas))
+            {
+                noisePoint = hit.position;
+            }
+            perception.TriggerSoundDisturbance(noisePoint);
         }
 
         public void SnapCameraToArcher()
