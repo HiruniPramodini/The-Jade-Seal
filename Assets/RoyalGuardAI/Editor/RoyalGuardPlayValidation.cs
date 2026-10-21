@@ -83,6 +83,7 @@ namespace JadeSeal.RoyalGuard.Editor
                 }
                 else if (stage == 2 && Time.time > started + 1)
                 {
+                    Check(!sense.HasMemory(.1f), "Last-seen memory expires with elapsed game time");
                     Check(Mathf.Approximately(damage, 15), "Real physics collision delivers exactly one 15HP hit");
                     Check(!weapon.IsReloading && !weapon.NeedsReload && weapon.CanFire, "Timed reload and cooldown complete");
                     Check(!nav.Validate(new Vector3(100, 0, 100), out _, out _), "Off-mesh destination rejected");
@@ -138,4 +139,5 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
+
 

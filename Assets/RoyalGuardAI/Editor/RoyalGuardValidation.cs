@@ -68,6 +68,12 @@ namespace JadeSeal.RoyalGuard.Editor
                 Check(RoyalGuardUtility.Choose(c, RoyalGuardUtility.State.Reposition, 2, s) == RoyalGuardUtility.State.Attack, "Peek arrival permits Attack");
                 c.atPeek = false; c.atHide = true;
                 Check(RoyalGuardUtility.Choose(c, RoyalGuardUtility.State.SeekCover, 0, s) == RoyalGuardUtility.State.Reposition, "Invalid current action bypasses minimum dwell");
+                c.atHide = false; c.atPeek = false; c.firingLine = false; c.coverScore = .9f;
+                Check(RoyalGuardUtility.Choose(c, RoyalGuardUtility.State.Reposition, 1, s) == RoyalGuardUtility.State.Reposition, "Hysteresis retains feasible state against small advantage");
+                Check(RoyalGuardUtility.Choose(c, RoyalGuardUtility.State.Reposition, 9, s) == RoyalGuardUtility.State.SeekCover, "Maximum duration releases score margin");
+                s.switchMargin = .01f;
+                Check(RoyalGuardUtility.Choose(c, RoyalGuardUtility.State.Reposition, .1f, s) == RoyalGuardUtility.State.Reposition, "Minimum dwell holds feasible state");
+                Check(RoyalGuardUtility.Choose(c, RoyalGuardUtility.State.Reposition, 1, s) == RoyalGuardUtility.State.SeekCover, "Stronger challenger wins after dwell");
                 float good = RoyalGuardUtility.CoverScore(2, 3, 1, 0, 1, s);
                 float exposed = RoyalGuardUtility.CoverScore(2, 3, 1, 1, 1, s);
                 Check(good > exposed && good <= 1 && exposed >= 0, "Cover rewards occlusion with bounded score");
@@ -92,4 +98,5 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
+
 
