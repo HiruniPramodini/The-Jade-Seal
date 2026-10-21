@@ -40,20 +40,58 @@ namespace JadeSeal.EnemyAI.Combat
         {
             if (IsDead) return;
 
-            // Optional WASD Keyboard Movement for testing
+            // Movement and Attack inputs
             HandleMovement();
+            HandleAttackInput();
+        }
 
-            // Left Mouse Click: Attack target archer
-            if (Input.GetMouseButtonDown(0))
+        private void HandleAttackInput()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
             {
                 AttackTargetArcher();
             }
+#else
+            try
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    AttackTargetArcher();
+                }
+            }
+            catch (System.Exception)
+            {
+                // New Input System is active in PlayerSettings, ignore legacy error
+            }
+#endif
         }
 
         private void HandleMovement()
         {
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
+            float h = 0f;
+            float v = 0f;
+
+#if ENABLE_INPUT_SYSTEM
+            if (UnityEngine.InputSystem.Keyboard.current != null)
+            {
+                var kb = UnityEngine.InputSystem.Keyboard.current;
+                if (kb.aKey.isPressed || kb.leftArrowKey.isPressed) h -= 1f;
+                if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) h += 1f;
+                if (kb.sKey.isPressed || kb.downArrowKey.isPressed) v -= 1f;
+                if (kb.wKey.isPressed || kb.upArrowKey.isPressed) v += 1f;
+            }
+#else
+            try
+            {
+                h = Input.GetAxisRaw("Horizontal");
+                v = Input.GetAxisRaw("Vertical");
+            }
+            catch (System.InvalidOperationException)
+            {
+                // New Input System is active in PlayerSettings
+            }
+#endif
 
             if (Mathf.Abs(h) > 0.01f || Mathf.Abs(v) > 0.01f)
             {

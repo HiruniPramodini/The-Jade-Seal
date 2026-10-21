@@ -86,7 +86,14 @@ namespace JadeSeal.EnemyAI.Sensory
                 if (angle <= fovAngle * 0.5f)
                 {
                     // 2. Line of Sight Raycast
-                    if (!Physics.Raycast(eyePos, dirToPlayer.normalized, distanceToPlayer, occlusionMask))
+                    if (Physics.Raycast(eyePos, dirToPlayer.normalized, out RaycastHit hit, distanceToPlayer + 0.2f, occlusionMask))
+                    {
+                        if (hit.transform == playerTransform || hit.transform.IsChildOf(playerTransform) || hit.collider.CompareTag("Player") || hit.distance >= distanceToPlayer - 0.5f)
+                        {
+                            directVision = true;
+                        }
+                    }
+                    else
                     {
                         directVision = true;
                     }

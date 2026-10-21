@@ -60,6 +60,7 @@ namespace JadeSeal.EnemyAI.Visuals
             navAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<MountainArcherHealth>();
 
+            DisableBlenderRogueLights();
             CacheAnimatorParameters();
             ResolveAnimator();
 
@@ -70,6 +71,22 @@ namespace JadeSeal.EnemyAI.Visuals
             }
 
             BuildProceduralPrototypeIfNeeded();
+        }
+
+        private void Start()
+        {
+            DisableBlenderRogueLights();
+        }
+
+        public void DisableBlenderRogueLights()
+        {
+            Light[] lights = GetComponentsInChildren<Light>(true);
+            foreach (var l in lights)
+            {
+                Debug.Log($"<color=yellow>[MountainArcherVisualizer] Disabling rogue FBX light: '{l.name}'</color>");
+                l.enabled = false;
+                l.intensity = 0f;
+            }
         }
 
         private void OnDestroy()
@@ -101,11 +118,15 @@ namespace JadeSeal.EnemyAI.Visuals
             }
 
             existingParamHashes.Clear();
-            if (characterAnimator != null && characterAnimator.runtimeAnimatorController != null)
+            if (characterAnimator != null)
             {
-                foreach (var param in characterAnimator.parameters)
+                characterAnimator.applyRootMotion = false; // Prevent NavMeshAgent conflict
+                if (characterAnimator.runtimeAnimatorController != null)
                 {
-                    existingParamHashes.Add(param.nameHash);
+                    foreach (var param in characterAnimator.parameters)
+                    {
+                        existingParamHashes.Add(param.nameHash);
+                    }
                 }
             }
         }

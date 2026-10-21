@@ -111,6 +111,7 @@ namespace JadeSeal.EnemyAI.Core
             }
 
             CreateDefaultArrowPrefabIfNeeded();
+            SnapCameraToArcher();
         }
 
         private void BuildBehaviorTree()
@@ -474,11 +475,13 @@ namespace JadeSeal.EnemyAI.Core
 
         private void OnGUI()
         {
-            GUI.Box(new Rect(20, 20, 360, 280), GUIContent.none);
-            GUILayout.BeginArea(new Rect(25, 25, 350, 270));
+            float boxWidth = Mathf.Min(340f, Screen.width * 0.5f);
+            float boxHeight = Mathf.Min(260f, Screen.height * 0.8f);
+            GUI.Box(new Rect(15, 15, boxWidth, boxHeight), GUIContent.none);
+            GUILayout.BeginArea(new Rect(20, 20, boxWidth - 10, boxHeight - 10));
 
-            GUIStyle titleStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 14, fontStyle = FontStyle.Bold };
-            GUIStyle textStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 12 };
+            GUIStyle titleStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 13, fontStyle = FontStyle.Bold };
+            GUIStyle textStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 11 };
 
             GUILayout.Label("<color=#00FF99>🏹 MOUNTAIN ARCHER AI (SE3062)</color>", titleStyle);
             
@@ -506,23 +509,73 @@ namespace JadeSeal.EnemyAI.Core
                 GUILayout.Label("<b>Target:</b> <color=gray>Patrolling Mountain Pass</color>", textStyle);
             }
 
-            GUILayout.Space(6);
-            if (GUILayout.Button("⚡ Trigger Player Rush (6m - Test Distance Keeping)", GUILayout.Height(28)))
+            GUILayout.Space(4);
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("🎥 Focus Camera", GUILayout.Height(24)))
+            {
+                SnapCameraToArcher();
+            }
+            if (GUILayout.Button("📍 Spawn in Front", GUILayout.Height(24)))
+            {
+                TeleportArcherInFrontOfCamera();
+            }
+            GUILayout.EndHorizontal();
+
+            GUILayout.Space(4);
+            if (GUILayout.Button("⚡ Trigger Player Rush (6m - Test Distance Keeping)", GUILayout.Height(26)))
             {
                 TriggerTestTarget(6.0f);
             }
             GUILayout.Space(2);
-            if (GUILayout.Button("🎯 Move Player to Archery Range (16m - Test Shoot)", GUILayout.Height(28)))
+            if (GUILayout.Button("🎯 Move Player to Archery Range (16m - Test Shoot)", GUILayout.Height(26)))
             {
                 TriggerTestTarget(16f);
             }
             GUILayout.Space(2);
-            if (GUILayout.Button("⚔️ Simulate Player Attack (-25 HP on Archer)", GUILayout.Height(28)))
+            if (GUILayout.Button("⚔️ Simulate Player Attack (-25 HP on Archer)", GUILayout.Height(26)))
             {
                 if (health != null) health.TakeDamage(25f);
             }
 
             GUILayout.EndArea();
+        }
+
+        public void SnapCameraToArcher()
+        {
+            Camera cam = Camera.main;
+            if (cam == null) cam = Object.FindFirstObjectByType<Camera>();
+            if (cam != null)
+            {
+                cam.transform.position = transform.position - transform.forward * 5.0f + Vector3.up * 2.2f;
+                cam.transform.LookAt(transform.position + Vector3.up * 1.2f);
+            }
+        }
+
+        public void TeleportArcherInFrontOfCamera()
+        {
+            Camera cam = Camera.main;
+            if (cam == null) cam = Object.FindFirstObjectByType<Camera>();
+            if (cam != null)
+            {
+                Vector3 targetPos = cam.transform.position + cam.transform.forward * 6.0f;
+                if (NavMesh.SamplePosition(targetPos, out NavMeshHit hit, 15f, NavMesh.AllAreas))
+                {
+                    if (navAgent != null)
+                    {
+                        navAgent.Warp(hit.position);
+                    }
+                    else
+                    {
+                        transform.position = hit.position;
+                    }
+                    Vector3 lookDir = (cam.transform.position - transform.position);
+                    lookDir.y = 0f;
+                    if (lookDir.sqrMagnitude > 0.01f)
+                    {
+                        transform.rotation = Quaternion.LookRotation(lookDir);
+                    }
+                }
+            }
         }
 
         private void TriggerTestTarget(float distance)

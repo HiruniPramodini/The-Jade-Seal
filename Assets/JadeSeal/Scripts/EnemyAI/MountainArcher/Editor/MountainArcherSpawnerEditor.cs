@@ -146,6 +146,12 @@ namespace JadeSeal.EnemyAI.Editor
                 modelInstance.transform.localRotation = Quaternion.identity;
                 modelInstance.transform.localScale = Vector3.one;
 
+                // Strip out Blender rogue lights exported inside FBX
+                foreach (var l in modelInstance.GetComponentsInChildren<Light>(true))
+                {
+                    Object.DestroyImmediate(l.gameObject);
+                }
+
                 // Inform Visualizer to bind Animator and clean up any old visuals
                 var visualizer = archerObj.GetComponent<MountainArcherVisualizer>();
                 if (visualizer != null)

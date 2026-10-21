@@ -35,6 +35,16 @@ namespace JadeSeal.EnemyAI.Editor
                 }
             }
 
+            // Clean up Blender rogue lights exported inside MA.fbx model
+            foreach (var archer in Object.FindObjectsByType<MountainArcherAgent>(FindObjectsSortMode.None))
+            {
+                foreach (var light in archer.GetComponentsInChildren<Light>(true))
+                {
+                    Debug.Log($"<color=yellow>[AnimationSetup] Removed Blender rogue light '{light.name}' from '{archer.name}'</color>");
+                    Undo.DestroyObjectImmediate(light.gameObject);
+                }
+            }
+
             // 2. Locate or create Animator Controller
             string controllerPath = "Assets/JadeSeal/Characters/MountainArcher/AC_MountainArcher.controller";
             AnimatorController animController = AssetDatabase.LoadAssetAtPath<AnimatorController>(controllerPath);
@@ -138,6 +148,15 @@ namespace JadeSeal.EnemyAI.Editor
                 if (visualizer != null) visualizer.ResolveAnimator();
 
                 Debug.Log($"<color=#00FF99>[AnimationSetup] Successfully assigned {animController.name} to {activeArcher.name}'s Animator!</color>");
+
+                // Frame camera onto Mountain Archer in Game View
+                Camera cam = Camera.main;
+                if (cam != null)
+                {
+                    Undo.RecordObject(cam.transform, "Frame Archer Camera");
+                    cam.transform.position = activeArcher.transform.position - activeArcher.transform.forward * 6.5f + Vector3.up * 2.5f;
+                    cam.transform.LookAt(activeArcher.transform.position + Vector3.up * 1.2f);
+                }
             }
 
             AssetDatabase.SaveAssets();
