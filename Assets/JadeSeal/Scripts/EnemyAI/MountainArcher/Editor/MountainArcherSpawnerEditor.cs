@@ -4,6 +4,7 @@ using UnityEngine.AI;
 using JadeSeal.EnemyAI.Core;
 using JadeSeal.EnemyAI.Sensory;
 using JadeSeal.EnemyAI.Visuals;
+using JadeSeal.EnemyAI.Combat;
 
 namespace JadeSeal.EnemyAI.Editor
 {
