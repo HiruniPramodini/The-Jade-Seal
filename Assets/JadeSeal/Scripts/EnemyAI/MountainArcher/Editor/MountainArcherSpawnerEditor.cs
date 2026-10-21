@@ -128,8 +128,13 @@ namespace JadeSeal.EnemyAI.Editor
                 Object.DestroyImmediate(oldModel.gameObject);
             }
 
-            // Load and instantiate MountainArcher_Model.fbx
-            string modelPath = "Assets/JadeSeal/Characters/MountainArcher/MountainArcher_Model.fbx";
+            // Load and instantiate friend's official MA.fbx model
+            string modelPath = "Assets/JadeSeal/Characters/MountainArcher/MA.fbx";
+            if (!System.IO.File.Exists(modelPath) && !System.IO.File.Exists(Application.dataPath + "/JadeSeal/Characters/MountainArcher/MA.fbx"))
+            {
+                modelPath = "Assets/JadeSeal/Characters/MountainArcher/MountainArcher_Model.fbx";
+            }
+
             GameObject modelPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(modelPath);
 
             if (modelPrefab != null)
@@ -140,7 +145,14 @@ namespace JadeSeal.EnemyAI.Editor
                 modelInstance.transform.localRotation = Quaternion.identity;
                 modelInstance.transform.localScale = Vector3.one;
 
-                Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully attached '{modelPrefab.name}' to {archerObj.name}!</color>");
+                // Inform Visualizer to bind Animator and clean up any old visuals
+                var visualizer = archerObj.GetComponent<MountainArcherVisualizer>();
+                if (visualizer != null)
+                {
+                    visualizer.BindNewCharacterModel(modelInstance);
+                }
+
+                Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully attached official 3D model '{modelPrefab.name}' to {archerObj.name}!</color>");
             }
             else
             {
