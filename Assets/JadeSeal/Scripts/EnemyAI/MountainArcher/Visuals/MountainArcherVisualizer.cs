@@ -52,7 +52,20 @@ namespace JadeSeal.EnemyAI.Visuals
 
         private ArcherState previousState;
         private float bobTimer = 0f;
+        private float walkCycle = 0f;
         private bool hasPlayedDeath = false;
+
+        // Skeletal Bone Cache for Procedural Gait & Archer Stance
+        private Transform boneHips;
+        private Transform boneSpine;
+        private Transform boneLeftArm;
+        private Transform boneRightArm;
+        private Transform boneLeftForeArm;
+        private Transform boneRightForeArm;
+        private Transform boneLeftUpLeg;
+        private Transform boneRightUpLeg;
+        private Transform boneLeftLeg;
+        private Transform boneRightLeg;
 
         private void Awake()
         {
@@ -165,6 +178,126 @@ namespace JadeSeal.EnemyAI.Visuals
             }
 
             previousState = state;
+        }
+
+        private void LateUpdate()
+        {
+            if (hasPlayedDeath)
+            {
+                ApplyDeathRagdollPose();
+                return;
+            }
+
+            if (boneLeftArm == null || boneLeftUpLeg == null)
+            {
+                ResolveSkeletonBones();
+                if (boneLeftArm == null && boneLeftUpLeg == null) return;
+            }
+
+            float currentSpeed = navAgent != null ? navAgent.velocity.magnitude : 0f;
+            ArcherState state = agent != null ? agent.CurrentState : ArcherState.Idle;
+
+            AnimateSkeletonProcedurally(currentSpeed, state);
+        }
+
+        public void ResolveSkeletonBones()
+        {
+            Transform[] allChildren = GetComponentsInChildren<Transform>();
+            foreach (var t in allChildren)
+            {
+                string n = t.name.ToLower();
+                if (n.Contains("hips")) boneHips = t;
+                else if (n.Contains("spine") && boneSpine == null) boneSpine = t;
+                else if (n.Contains("leftarm") || n.Contains("leftshoulder") || n.Contains("arm_l") || n.Contains("upperarm_l")) boneLeftArm = t;
+                else if (n.Contains("rightarm") || n.Contains("rightshoulder") || n.Contains("arm_r") || n.Contains("upperarm_r")) boneRightArm = t;
+                else if (n.Contains("leftforearm") || n.Contains("elbow_l") || n.Contains("forearm_l")) boneLeftForeArm = t;
+                else if (n.Contains("rightforearm") || n.Contains("elbow_r") || n.Contains("forearm_r")) boneRightForeArm = t;
+                else if (n.Contains("leftupleg") || n.Contains("thigh_l")) boneLeftUpLeg = t;
+                else if (n.Contains("rightupleg") || n.Contains("thigh_r")) boneRightUpLeg = t;
+                else if (n.Contains("leftleg") || n.Contains("knee_l") || n.Contains("shin_l") || n.Contains("calf_l")) boneLeftLeg = t;
+                else if (n.Contains("rightleg") || n.Contains("knee_r") || n.Contains("shin_r") || n.Contains("calf_r")) boneRightLeg = t;
+            }
+        }
+
+        private void AnimateSkeletonProcedurally(float speed, ArcherState state)
+        {
+            // 1. Locomotion Leg Gait (Kaalkalaal walk stride)
+            if (speed > 0.15f)
+            {
+                walkCycle += Time.deltaTime * speed * 4.5f;
+                float stride = Mathf.Sin(walkCycle) * 30f * Mathf.Clamp01(speed / 2.2f);
+
+                if (boneLeftUpLeg != null)
+                    boneLeftUpLeg.localRotation = Quaternion.Euler(stride, 0f, 0f);
+                if (boneRightUpLeg != null)
+                    boneRightUpLeg.localRotation = Quaternion.Euler(-stride, 0f, 0f);
+
+                // Knee flex on back stride
+                if (boneLeftLeg != null)
+                    boneLeftLeg.localRotation = Quaternion.Euler(Mathf.Clamp(-stride * 0.9f, 0f, 45f), 0f, 0f);
+                if (boneRightLeg != null)
+                    boneRightLeg.localRotation = Quaternion.Euler(Mathf.Clamp(stride * 0.9f, 0f, 45f), 0f, 0f);
+            }
+            else
+            {
+                if (boneLeftUpLeg != null)
+                    boneLeftUpLeg.localRotation = Quaternion.Slerp(boneLeftUpLeg.localRotation, Quaternion.identity, Time.deltaTime * 6f);
+                if (boneRightUpLeg != null)
+                    boneRightUpLeg.localRotation = Quaternion.Slerp(boneRightUpLeg.localRotation, Quaternion.identity, Time.deltaTime * 6f);
+                if (boneLeftLeg != null)
+                    boneLeftLeg.localRotation = Quaternion.Slerp(boneLeftLeg.localRotation, Quaternion.identity, Time.deltaTime * 6f);
+                if (boneRightLeg != null)
+                    boneRightLeg.localRotation = Quaternion.Slerp(boneRightLeg.localRotation, Quaternion.identity, Time.deltaTime * 6f);
+            }
+
+            // 2. Arms & Combat Stance (Eliminates T-Pose hands, positions bow and quiver)
+            if (state == ArcherState.Aiming || state == ArcherState.Shooting)
+            {
+                // Left Arm raises forward holding the bow pointed at target
+                if (boneLeftArm != null)
+                    boneLeftArm.localRotation = Quaternion.Slerp(boneLeftArm.localRotation, Quaternion.Euler(-20f, 15f, 65f), Time.deltaTime * 10f);
+                if (boneLeftForeArm != null)
+                    boneLeftForeArm.localRotation = Quaternion.Slerp(boneLeftForeArm.localRotation, Quaternion.Euler(0f, 25f, 10f), Time.deltaTime * 10f);
+
+                // Right Arm pulls bowstring back towards jaw/cheek
+                if (boneRightArm != null)
+                    boneRightArm.localRotation = Quaternion.Slerp(boneRightArm.localRotation, Quaternion.Euler(-45f, -25f, -50f), Time.deltaTime * 10f);
+                if (boneRightForeArm != null)
+                    boneRightForeArm.localRotation = Quaternion.Slerp(boneRightForeArm.localRotation, Quaternion.Euler(0f, -80f, 0f), Time.deltaTime * 10f);
+
+                // Torso / Spine twists slightly into the shot
+                if (boneSpine != null)
+                    boneSpine.localRotation = Quaternion.Slerp(boneSpine.localRotation, Quaternion.Euler(0f, -15f, 0f), Time.deltaTime * 8f);
+            }
+            else
+            {
+                // Archer rest / patrol stance (Arms down naturally at sides with slight sway)
+                float armSway = (speed > 0.15f) ? Mathf.Sin(walkCycle) * 16f : 0f;
+
+                // Left Arm holds bow at hip
+                if (boneLeftArm != null)
+                    boneLeftArm.localRotation = Quaternion.Slerp(boneLeftArm.localRotation, Quaternion.Euler(armSway, 10f, 65f), Time.deltaTime * 6f);
+                if (boneLeftForeArm != null)
+                    boneLeftForeArm.localRotation = Quaternion.Slerp(boneLeftForeArm.localRotation, Quaternion.Euler(0f, 25f, 15f), Time.deltaTime * 6f);
+
+                // Right Arm rests near hip / quiver
+                if (boneRightArm != null)
+                    boneRightArm.localRotation = Quaternion.Slerp(boneRightArm.localRotation, Quaternion.Euler(-armSway, -10f, -65f), Time.deltaTime * 6f);
+                if (boneRightForeArm != null)
+                    boneRightForeArm.localRotation = Quaternion.Slerp(boneRightForeArm.localRotation, Quaternion.Euler(0f, -25f, -15f), Time.deltaTime * 6f);
+
+                if (boneSpine != null)
+                    boneSpine.localRotation = Quaternion.Slerp(boneSpine.localRotation, Quaternion.identity, Time.deltaTime * 6f);
+            }
+        }
+
+        private void ApplyDeathRagdollPose()
+        {
+            if (boneHips != null)
+            {
+                boneHips.localPosition = Vector3.Lerp(boneHips.localPosition, new Vector3(0, 0.25f, 0), Time.deltaTime * 4f);
+                boneHips.localRotation = Quaternion.Slerp(boneHips.localRotation, Quaternion.Euler(70f, 0f, 0f), Time.deltaTime * 4f);
+            }
         }
 
         private void HandleHitReceived(Vector3 hitPoint, Vector3 hitNormal)

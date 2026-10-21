@@ -129,11 +129,11 @@ namespace JadeSeal.EnemyAI.Editor
                 Object.DestroyImmediate(oldModel.gameObject);
             }
 
-            // Load and instantiate friend's official MA.fbx model
-            string modelPath = "Assets/JadeSeal/Characters/MountainArcher/MA.fbx";
-            if (!System.IO.File.Exists(modelPath) && !System.IO.File.Exists(Application.dataPath + "/JadeSeal/Characters/MountainArcher/MA.fbx"))
+            // Load and instantiate MountainArcher_Model.fbx (Erika Archer with skin, textures, and rig)
+            string modelPath = "Assets/JadeSeal/Characters/MountainArcher/MountainArcher_Model.fbx";
+            if (!System.IO.File.Exists(modelPath) && !System.IO.File.Exists(Application.dataPath + "/JadeSeal/Characters/MountainArcher/MountainArcher_Model.fbx"))
             {
-                modelPath = "Assets/JadeSeal/Characters/MountainArcher/MountainArcher_Model.fbx";
+                modelPath = "Assets/JadeSeal/Characters/MountainArcher/MA.fbx";
             }
 
             GameObject modelPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(modelPath);
