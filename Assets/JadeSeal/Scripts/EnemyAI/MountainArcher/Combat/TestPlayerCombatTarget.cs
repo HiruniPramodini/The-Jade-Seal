@@ -107,23 +107,37 @@ namespace JadeSeal.EnemyAI.Combat
 
         public void AttackTargetArcher()
         {
-            if (targetArcher == null)
+            AttackNearbyEnemies();
+        }
+
+        public void AttackNearbyEnemies()
+        {
+            Collider[] hits = Physics.OverlapSphere(transform.position + transform.forward * 1.0f, attackRange);
+            IDamageable closestTarget = null;
+            float closestDist = float.MaxValue;
+            Vector3 hitPoint = Vector3.zero;
+
+            foreach (var h in hits)
             {
-                targetArcher = Object.FindFirstObjectByType<MountainArcherAgent>();
-                if (targetArcher == null) return;
+                if (h.gameObject == gameObject) continue;
+                var damageable = h.GetComponent<IDamageable>();
+                if (damageable != null && !damageable.IsDead)
+                {
+                    float dist = Vector3.Distance(transform.position, h.transform.position);
+                    if (dist < closestDist)
+                    {
+                        closestDist = dist;
+                        closestTarget = damageable;
+                        hitPoint = h.transform.position + Vector3.up * 1.2f;
+                    }
+                }
             }
 
-            float dist = Vector3.Distance(transform.position, targetArcher.transform.position);
-            if (dist <= attackRange)
+            if (closestTarget != null)
             {
-                var archerHealth = targetArcher.GetComponent<MountainArcherHealth>();
-                if (archerHealth != null)
-                {
-                    Vector3 hitPoint = targetArcher.transform.position + Vector3.up * 1.2f;
-                    Vector3 hitNormal = (transform.position - targetArcher.transform.position).normalized;
-                    archerHealth.TakeDamage(attackDamage, hitPoint, hitNormal);
-                    Debug.Log($"<color=#FFFF00>[PlayerAttack]</color> Struck Mountain Archer for {attackDamage} damage! Distance: {dist:F1}m");
-                }
+                Vector3 hitNormal = (transform.position - hitPoint).normalized;
+                closestTarget.TakeDamage(attackDamage, hitPoint, hitNormal);
+                Debug.Log($"<color=#FFFF00>[PlayerAttack]</color> Struck enemy for {attackDamage} damage!");
             }
         }
 
@@ -132,11 +146,11 @@ namespace JadeSeal.EnemyAI.Combat
             if (IsDead) return;
 
             currentHealth = Mathf.Max(0f, currentHealth - amount);
-            Debug.Log($"<color=#FF3333>[PlayerHealth]</color> Player took {amount} arrow damage! Current HP: {currentHealth:F0}/{maxHealth:F0}");
+            Debug.Log($"<color=#FF3333>[PlayerHealth]</color> Player took {amount:F1} damage! Current HP: {currentHealth:F0}/{maxHealth:F0}");
 
             if (currentHealth <= 0f)
             {
-                Debug.Log("<color=#FF0000><b>[PlayerHealth]</b> Player was defeated by the Mountain Archer!</color>");
+                Debug.Log("<color=#FF0000><b>[PlayerHealth]</b> Player was defeated!</color>");
             }
         }
 
@@ -147,12 +161,47 @@ namespace JadeSeal.EnemyAI.Combat
 
         private void OnGUI()
         {
-            // Simple Player HP display at bottom-left
-            GUI.Box(new Rect(20, Screen.height - 90, 240, 70), GUIContent.none);
-            GUILayout.BeginArea(new Rect(25, Screen.height - 85, 230, 60));
+            // Player HUD
+            GUI.Box(new Rect(20, Screen.height - 100, 240, 85), GUIContent.none);
+            GUILayout.BeginArea(new Rect(25, Screen.height - 95, 230, 75));
             GUILayout.Label("<color=#00CCFF><b>👤 PLAYER STATUS</b></color>", new GUIStyle(GUI.skin.label) { richText = true });
             GUILayout.Label($"<b>Health:</b> <color={(currentHealth > 30 ? "#00FF99" : "#FF3333")}>{currentHealth:F0} / {maxHealth:F0}</color>", new GUIStyle(GUI.skin.label) { richText = true });
             GUILayout.Label("<size=10><color=gray>[W,A,S,D] Move | [L-Click] Attack</color></size>", new GUIStyle(GUI.skin.label) { richText = true });
+            GUILayout.EndArea();
+
+            // Multi-Agent Status Display at Top-Right
+            GUI.Box(new Rect(Screen.width - 290, 20, 270, 160), GUIContent.none);
+            GUILayout.BeginArea(new Rect(Screen.width - 285, 25, 260, 150));
+            GUILayout.Label("<color=#FFD700><b>🏯 THE JADE SEAL — ENEMY AGENTS</b></color>", new GUIStyle(GUI.skin.label) { richText = true });
+
+            var archer = Object.FindFirstObjectByType<MountainArcherAgent>();
+            if (archer != null)
+            {
+                var h = archer.GetComponent<MountainArcherHealth>();
+                GUILayout.Label($"<color=#55FF55>🏹 Archer:</color> {archer.CurrentState} | HP: {(h != null ? h.CurrentHealth.ToString("F0") : "?")}", new GUIStyle(GUI.skin.label) { richText = true });
+            }
+
+            var guard = Object.FindFirstObjectByType<JadeSeal.EnemyAI.RoyalGuard.RoyalGuardAgent>();
+            if (guard != null)
+            {
+                var h = guard.GetComponent<JadeSeal.EnemyAI.RoyalGuard.RoyalGuardHealth>();
+                GUILayout.Label($"<color=#FF5555>🛡️ Guard:</color> {guard.CurrentState} | HP: {(h != null ? h.CurrentHealth.ToString("F0") : "?")}", new GUIStyle(GUI.skin.label) { richText = true });
+            }
+
+            var hunter = Object.FindFirstObjectByType<JadeSeal.EnemyAI.BambooHunter.BambooHunterAgent>();
+            if (hunter != null)
+            {
+                var h = hunter.GetComponent<JadeSeal.EnemyAI.BambooHunter.BambooHunterHealth>();
+                GUILayout.Label($"<color=#33FF88>🎋 Hunter:</color> {hunter.CurrentState} | HP: {(h != null ? h.CurrentHealth.ToString("F0") : "?")}", new GUIStyle(GUI.skin.label) { richText = true });
+            }
+
+            var master = Object.FindFirstObjectByType<JadeSeal.EnemyAI.ClanMaster.ClanMasterAgent>();
+            if (master != null)
+            {
+                var h = master.GetComponent<JadeSeal.EnemyAI.ClanMaster.ClanMasterHealth>();
+                GUILayout.Label($"<color=#33CCFF>🥋 Master:</color> {master.CurrentState} | HP: {(h != null ? h.CurrentHealth.ToString("F0") : "?")}", new GUIStyle(GUI.skin.label) { richText = true });
+            }
+
             GUILayout.EndArea();
         }
     }
