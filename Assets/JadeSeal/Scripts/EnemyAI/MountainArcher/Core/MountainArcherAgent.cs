@@ -94,10 +94,26 @@ namespace JadeSeal.EnemyAI.Core
         private void Awake()
         {
             navAgent = GetComponent<NavMeshAgent>();
+            if (navAgent == null) navAgent = gameObject.AddComponent<NavMeshAgent>();
+
             perception = GetComponent<MountainArcherPerception>();
+            if (perception == null) perception = gameObject.AddComponent<MountainArcherPerception>();
+
             health = GetComponent<MountainArcherHealth>();
+            if (health == null) health = gameObject.AddComponent<MountainArcherHealth>();
+
             agentCollider = GetComponent<Collider>();
+            if (agentCollider == null)
+            {
+                var col = gameObject.AddComponent<CapsuleCollider>();
+                col.radius = 0.45f;
+                col.height = 1.9f;
+                col.center = new Vector3(0, 0.95f, 0);
+                agentCollider = col;
+            }
+
             audioSource = GetComponent<AudioSource>();
+            if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
 
             BuildBehaviorTree();
         }
