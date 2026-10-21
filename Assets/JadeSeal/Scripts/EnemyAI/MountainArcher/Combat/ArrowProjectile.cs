@@ -1,10 +1,11 @@
 using UnityEngine;
+using JadeSeal.Combat;
 
 namespace JadeSeal.EnemyAI.Combat
 {
     /// <summary>
     /// Ballistic arrow projectile fired by the Mountain Archer.
-    /// Simulates aerodynamic rotation, gravity arc, and terrain/player collision impact.
+    /// Simulates aerodynamic rotation, gravity arc, and damage delivery via IDamageable and SendMessage.
     /// </summary>
     [RequireComponent(typeof(Rigidbody), typeof(Collider))]
     public class ArrowProjectile : MonoBehaviour
@@ -15,15 +16,29 @@ namespace JadeSeal.EnemyAI.Combat
         [SerializeField] private float lifetime = 8f;
         [SerializeField] private LayerMask collisionLayers = ~0;
 
+        [Header("Impact Audio & VFX")]
+        [SerializeField] private AudioClip impactSound;
+        [SerializeField] private GameObject impactVfxPrefab;
+
         private Rigidbody rb;
+        private Collider col;
         private bool hasHit = false;
         private Vector3 previousPosition;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            col = GetComponent<Collider>();
             rb.useGravity = true;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        }
+
+        public void SetShooter(Collider shooterCollider)
+        {
+            if (col != null && shooterCollider != null)
+            {
+                Physics.IgnoreCollision(col, shooterCollider, true);
+            }
         }
 
         public void Launch(Vector3 direction, float initialSpeedOverride = -1f)
@@ -88,12 +103,30 @@ namespace JadeSeal.EnemyAI.Combat
             transform.position = point;
             transform.parent = targetCollider.transform;
 
-            // Check if player or damagable target
-            if (targetCollider.CompareTag("Player") || targetCollider.name.ToLower().Contains("player"))
+            // Play impact sound if audio listener present
+            if (impactSound != null)
             {
-                // Send damage message or interface trigger
-                targetCollider.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-                Debug.Log($"[ArrowProjectile] Direct hit on player for {damage} damage!");
+                AudioSource.PlayClipAtPoint(impactSound, point);
+            }
+
+            // Spawn impact VFX if assigned
+            if (impactVfxPrefab != null)
+            {
+                GameObject vfx = Instantiate(impactVfxPrefab, point, Quaternion.LookRotation(normal));
+                Destroy(vfx, 2.0f);
+            }
+
+            // Deliver damage via IDamageable interface or SendMessage fallback
+            IDamageable damageable = targetCollider.GetComponentInParent<IDamageable>();
+            if (damageable != null && !damageable.IsDead)
+            {
+                damageable.TakeDamage(damage, point, normal);
+                Debug.Log($"<color=#00FF99>[ArrowProjectile]</color> Arrow damaged {targetCollider.name} for {damage} dmg via IDamageable!");
+            }
+            else
+            {
+                // Fallback for any legacy scripts
+                targetCollider.SendMessageUpwards("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
 
             // Despawn embedded arrow after 4 seconds

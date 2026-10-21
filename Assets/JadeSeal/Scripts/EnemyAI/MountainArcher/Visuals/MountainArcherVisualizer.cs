@@ -1,87 +1,144 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using JadeSeal.EnemyAI.Core;
 using JadeSeal.EnemyAI.Sensory;
+using JadeSeal.EnemyAI.Combat;
 
 namespace JadeSeal.EnemyAI.Visuals
 {
     /// <summary>
-    /// Decoupled Visual & Animation Bridge for Mountain Archer.
-    /// Fulfills SE3062 Rubric: "AI logic is cleanly decoupled from visuals."
-    /// 1. If an Animator component is attached, feeds standard Mecanim parameters.
-    /// 2. If no 3D character model is attached, provides procedural prototype animation
-    ///    (locomotion tilt, stride bobbing, and bow aiming) so the system works immediately.
+    /// Decoupled Visual & Animation Bridge for the Mountain Archer.
+    /// Supports Idle, Walk, Run, Aim, Shoot, Hit, Dodge, and Death states.
+    /// Allows swapping 3D models at any time without rewriting AI or Combat logic.
     /// </summary>
     [RequireComponent(typeof(MountainArcherAgent), typeof(NavMeshAgent))]
     public class MountainArcherVisualizer : MonoBehaviour
     {
-        [Header("Animation Bridge")]
+        [Header("Animator Component")]
+        [Tooltip("The Animator attached to the character model. If null, it will search children automatically.")]
         [SerializeField] private Animator characterAnimator;
 
-        [Header("Procedural Prototype Rig (Optional fallback)")]
+        [Header("Configurable Animator Parameter Names")]
+        [SerializeField] private string speedFloatParam = "Speed";
+        [SerializeField] private string isAimingBoolParam = "IsAiming";
+        [SerializeField] private string shootTriggerParam = "Shoot";
+        [SerializeField] private string hitTriggerParam = "Hit";
+        [SerializeField] private string dodgeTriggerParam = "Dodge";
+        [SerializeField] private string isKitingBoolParam = "IsKiting";
+        [SerializeField] private string deathTriggerParam = "Death";
+        [SerializeField] private string isDeadBoolParam = "IsDead";
+
+        [Header("Procedural Visuals Fallback")]
         [SerializeField] private Transform visualRoot;
         [SerializeField] private Transform bowProp;
 
+        // Cached Parameter Hashes
+        private int speedHash;
+        private int isAimingHash;
+        private int shootHash;
+        private int hitHash;
+        private int dodgeHash;
+        private int isKitingHash;
+        private int deathHash;
+        private int isDeadHash;
+
+        // Validated parameter set to prevent Unity console warnings if parameter is missing
+        private readonly HashSet<int> existingParamHashes = new HashSet<int>();
+
         private MountainArcherAgent agent;
         private NavMeshAgent navAgent;
-        private MountainArcherPerception perception;
-
-        private static readonly int SpeedHash = Animator.StringToHash("Speed");
-        private static readonly int IsAimingHash = Animator.StringToHash("IsAiming");
-        private static readonly int ShootTriggerHash = Animator.StringToHash("ShootTrigger");
-        private static readonly int IsKitingHash = Animator.StringToHash("IsKiting");
-        private static readonly int IsDeadHash = Animator.StringToHash("IsDead");
+        private MountainArcherHealth health;
 
         private ArcherState previousState;
         private float bobTimer = 0f;
+        private bool hasPlayedDeath = false;
 
         private void Awake()
         {
             agent = GetComponent<MountainArcherAgent>();
             navAgent = GetComponent<NavMeshAgent>();
-            perception = GetComponent<MountainArcherPerception>();
+            health = GetComponent<MountainArcherHealth>();
 
-            if (characterAnimator == null)
-            {
-                characterAnimator = GetComponentInChildren<Animator>();
-            }
+            CacheAnimatorParameters();
+            ResolveAnimator();
 
-            Transform model3D = transform.Find("MountainArcher_3DModel");
-            if (model3D != null)
+            if (health != null)
             {
-                Transform oldCapsule = transform.Find("ArcherPrototypeVisuals");
-                if (oldCapsule != null)
-                {
-                    if (Application.isPlaying) Destroy(oldCapsule.gameObject);
-                    else DestroyImmediate(oldCapsule.gameObject);
-                }
+                health.OnHitReceived += HandleHitReceived;
+                health.OnDied += HandleDied;
             }
 
             BuildProceduralPrototypeIfNeeded();
         }
 
-        private void Update()
+        private void OnDestroy()
         {
-            float currentSpeed = navAgent.velocity.magnitude;
-            ArcherState state = agent.CurrentState;
-
-            // 1. Mecanim Animator Updates (Decoupled bridge)
-            if (characterAnimator != null)
+            if (health != null)
             {
-                characterAnimator.SetFloat(SpeedHash, currentSpeed);
-                characterAnimator.SetBool(IsAimingHash, state == ArcherState.Aiming);
-                characterAnimator.SetBool(IsKitingHash, state == ArcherState.Kiting);
+                health.OnHitReceived -= HandleHitReceived;
+                health.OnDied -= HandleDied;
+            }
+        }
 
-                if (state == ArcherState.Shooting && previousState != ArcherState.Shooting)
-                {
-                    characterAnimator.SetTrigger(ShootTriggerHash);
-                }
+        public void CacheAnimatorParameters()
+        {
+            speedHash = Animator.StringToHash(speedFloatParam);
+            isAimingHash = Animator.StringToHash(isAimingBoolParam);
+            shootHash = Animator.StringToHash(shootTriggerParam);
+            hitHash = Animator.StringToHash(hitTriggerParam);
+            dodgeHash = Animator.StringToHash(dodgeTriggerParam);
+            isKitingHash = Animator.StringToHash(isKitingBoolParam);
+            deathHash = Animator.StringToHash(deathTriggerParam);
+            isDeadHash = Animator.StringToHash(isDeadBoolParam);
+        }
 
-                characterAnimator.SetBool(IsDeadHash, state == ArcherState.Dead);
+        public void ResolveAnimator()
+        {
+            if (characterAnimator == null)
+            {
+                characterAnimator = GetComponentInChildren<Animator>();
             }
 
-            // 2. Procedural Prototype Rig Animation (For testing without 3D models)
-            if (visualRoot != null && characterAnimator == null)
+            existingParamHashes.Clear();
+            if (characterAnimator != null && characterAnimator.runtimeAnimatorController != null)
+            {
+                foreach (var param in characterAnimator.parameters)
+                {
+                    existingParamHashes.Add(param.nameHash);
+                }
+            }
+        }
+
+        private void Update()
+        {
+            if (hasPlayedDeath) return;
+
+            float currentSpeed = navAgent != null ? navAgent.velocity.magnitude : 0f;
+            ArcherState state = agent != null ? agent.CurrentState : ArcherState.Idle;
+
+            // 1. Mecanim Animator Updates
+            if (characterAnimator != null && characterAnimator.isActiveAndEnabled)
+            {
+                SetAnimatorFloat(speedHash, currentSpeed);
+                SetAnimatorBool(isAimingHash, state == ArcherState.Aiming);
+                SetAnimatorBool(isKitingHash, state == ArcherState.Kiting);
+
+                // Trigger shooting
+                if (state == ArcherState.Shooting && previousState != ArcherState.Shooting)
+                {
+                    SetAnimatorTrigger(shootHash);
+                }
+
+                // Trigger dodge / kiting
+                if (state == ArcherState.Kiting && previousState != ArcherState.Kiting)
+                {
+                    SetAnimatorTrigger(dodgeHash);
+                }
+            }
+
+            // 2. Procedural Prototype Rig Animation (Fallback when no 3D humanoid animator is active)
+            if (visualRoot != null && (characterAnimator == null || !characterAnimator.isActiveAndEnabled))
             {
                 UpdateProceduralMotion(currentSpeed, state);
             }
@@ -89,18 +146,67 @@ namespace JadeSeal.EnemyAI.Visuals
             previousState = state;
         }
 
+        private void HandleHitReceived(Vector3 hitPoint, Vector3 hitNormal)
+        {
+            if (hasPlayedDeath) return;
+
+            if (characterAnimator != null && characterAnimator.isActiveAndEnabled)
+            {
+                SetAnimatorTrigger(hitHash);
+            }
+
+            // Procedural flinch feedback
+            if (visualRoot != null)
+            {
+                visualRoot.localPosition = new Vector3(0, 0, -0.15f);
+            }
+        }
+
+        private void HandleDied()
+        {
+            if (hasPlayedDeath) return;
+            hasPlayedDeath = true;
+
+            if (characterAnimator != null && characterAnimator.isActiveAndEnabled)
+            {
+                SetAnimatorBool(isDeadHash, true);
+                SetAnimatorTrigger(deathHash);
+            }
+
+            // Procedural death fallback: tip capsule over
+            if (visualRoot != null && (characterAnimator == null || !characterAnimator.isActiveAndEnabled))
+            {
+                visualRoot.localRotation = Quaternion.Euler(85f, 0, 0);
+                visualRoot.localPosition = new Vector3(0, 0.2f, 0);
+            }
+        }
+
+        private void SetAnimatorFloat(int hash, float val)
+        {
+            if (existingParamHashes.Contains(hash)) characterAnimator.SetFloat(hash, val);
+        }
+
+        private void SetAnimatorBool(int hash, bool val)
+        {
+            if (existingParamHashes.Contains(hash)) characterAnimator.SetBool(hash, val);
+        }
+
+        private void SetAnimatorTrigger(int hash)
+        {
+            if (existingParamHashes.Contains(hash)) characterAnimator.SetTrigger(hash);
+        }
+
         private void UpdateProceduralMotion(float speed, ArcherState state)
         {
             // Locomotion stride bob
             if (speed > 0.1f)
             {
-                bobTimer += Time.deltaTime * speed * 3f;
+                bobTimer += Time.deltaTime * speed * 3.5f;
                 float bobY = Mathf.Sin(bobTimer) * 0.08f;
                 visualRoot.localPosition = new Vector3(0, bobY, 0);
 
                 // Banking tilt during turns
-                float angularVel = navAgent.angularSpeed;
-                float tiltAngle = Mathf.Clamp(-transform.InverseTransformDirection(navAgent.velocity).x * 5f, -12f, 12f);
+                float tiltAngle = Mathf.Clamp(-transform.InverseTransformDirection(navAgent.velocity).x * 6f, -12f, 12f);
                 visualRoot.localRotation = Quaternion.Euler(0, 0, tiltAngle);
             }
             else
@@ -126,9 +232,25 @@ namespace JadeSeal.EnemyAI.Visuals
             }
         }
 
+        public void BindNewCharacterModel(GameObject newModelInstance)
+        {
+            // Destroy prototype capsule if present
+            Transform oldCapsule = transform.Find("ArcherPrototypeVisuals");
+            if (oldCapsule != null)
+            {
+                if (Application.isPlaying) Destroy(oldCapsule.gameObject);
+                else DestroyImmediate(oldCapsule.gameObject);
+            }
+
+            // Find Animator on new model
+            characterAnimator = newModelInstance.GetComponentInChildren<Animator>();
+            ResolveAnimator();
+
+            Debug.Log($"<color=#00FF99>[MountainArcherVisualizer]</color> Bound new model '{newModelInstance.name}' with Animator: {(characterAnimator != null ? "FOUND" : "NONE")}");
+        }
+
         private void BuildProceduralPrototypeIfNeeded()
         {
-            // If a real 3D model exists, destroy any leftover prototype capsule and exit
             Transform model3D = transform.Find("MountainArcher_3DModel");
             Transform existingCapsule = transform.Find("ArcherPrototypeVisuals");
 
@@ -157,7 +279,7 @@ namespace JadeSeal.EnemyAI.Visuals
             body.transform.SetParent(visualRoot);
             body.transform.localPosition = new Vector3(0, 1.0f, 0);
             body.transform.localScale = new Vector3(0.6f, 1.0f, 0.6f);
-            Destroy(body.GetComponent<Collider>()); // Avoid physics conflicts
+            Destroy(body.GetComponent<Collider>());
 
             // Head Sphere
             GameObject head = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -167,7 +289,7 @@ namespace JadeSeal.EnemyAI.Visuals
             head.transform.localScale = new Vector3(0.45f, 0.45f, 0.45f);
             Destroy(head.GetComponent<Collider>());
 
-            // Visor / Eyes to show facing direction
+            // Visor / Eyes
             GameObject visor = GameObject.CreatePrimitive(PrimitiveType.Cube);
             visor.name = "VisorFacing";
             visor.transform.SetParent(head.transform);

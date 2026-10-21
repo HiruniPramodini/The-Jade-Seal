@@ -75,8 +75,8 @@ namespace JadeSeal.EnemyAI.Tactical
             Vector3 awayFromTarget = (currentPos - targetPos).normalized;
             if (awayFromTarget.sqrMagnitude < 0.001f) awayFromTarget = Vector3.forward;
 
-            // Test 5 divergent angles away from target (0 deg, +30 deg, -30 deg, +60 deg, -60 deg)
-            float[] angles = { 0f, 30f, -30f, 60f, -60f };
+            // Test retreat and sideways strafe angles away from target (0 deg, +/-30 deg, +/-60 deg, +/-90 deg sideways)
+            float[] angles = { 0f, 30f, -30f, 60f, -60f, 90f, -90f };
             float bestScore = float.MinValue;
             bool found = false;
 

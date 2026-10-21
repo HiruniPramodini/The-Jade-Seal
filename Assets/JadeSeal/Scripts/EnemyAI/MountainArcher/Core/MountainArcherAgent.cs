@@ -12,27 +12,23 @@ namespace JadeSeal.EnemyAI.Core
     {
         Idle,
         Patrol,
+        Chase,
         Kiting,
         Aiming,
         Shooting,
-        Repositioning,
         Dead
     }
 
     /// <summary>
     /// Autonomous Mountain Archer Agent Controller.
-    /// Implements:
-    /// 1. Modular Behavior Tree decision architecture (SE3062 Rubric).
-    /// 2. Spatial heuristic high-ground vantage point search.
-    /// 3. Tactical kiting (retreat mechanics when player approaches).
-    /// 4. Kinematic predictive lead aim solver.
-    /// 5. Decoupled visual & animator bridge.
+    /// Manages Patrol, Detection, Chase, Ranged Combat, and Distance Keeping (Kiting).
+    /// Decoupled from 3D models and integrated with Health and Combat systems.
     /// </summary>
-    [RequireComponent(typeof(NavMeshAgent), typeof(MountainArcherPerception))]
+    [RequireComponent(typeof(NavMeshAgent), typeof(MountainArcherPerception), typeof(MountainArcherHealth))]
     public class MountainArcherAgent : MonoBehaviour
     {
         [Header("Tactical Range Settings")]
-        [Tooltip("Minimum distance before archer retreats/kites backwards.")]
+        [Tooltip("Minimum distance before archer retreats/kites backwards or sideways.")]
         [SerializeField] private float minKiteDistance = 7f;
 
         [Tooltip("Ideal maximum range for shooting arrows.")]
@@ -45,7 +41,7 @@ namespace JadeSeal.EnemyAI.Core
         [Tooltip("Patrol walking speed in m/s.")]
         [SerializeField] private float walkSpeed = 2.4f;
 
-        [Tooltip("Retreating and chasing sprint speed in m/s.")]
+        [Tooltip("Chase and tactical kiting sprint speed in m/s.")]
         [SerializeField] private float runSpeed = 5.0f;
 
         [Header("Combat & Archery")]
@@ -54,6 +50,11 @@ namespace JadeSeal.EnemyAI.Core
         [SerializeField] private float arrowSpeed = 30f;
         [SerializeField] private Transform bowFirePoint;
         [SerializeField] private GameObject arrowPrefab;
+
+        [Header("Audio Feedback")]
+        [SerializeField] private AudioClip bowDrawSound;
+        [SerializeField] private AudioClip bowReleaseSound;
+        private AudioSource audioSource;
 
         [Header("Heuristic Evaluation Weights")]
         [SerializeField] private float weightElevation = 1.8f;
@@ -73,10 +74,14 @@ namespace JadeSeal.EnemyAI.Core
         // Components
         private NavMeshAgent navAgent;
         private MountainArcherPerception perception;
+        private MountainArcherHealth health;
+        private Collider agentCollider;
         private BTNode behaviorTreeRoot;
 
         // Runtime State
         public ArcherState CurrentState { get; private set; } = ArcherState.Idle;
+        private bool isDead = false;
+        private bool isStunned = false;
         private float lastShotTime = -10f;
         private float currentAimTimer = 0f;
         private int currentWaypointIndex = 0;
@@ -88,6 +93,10 @@ namespace JadeSeal.EnemyAI.Core
         {
             navAgent = GetComponent<NavMeshAgent>();
             perception = GetComponent<MountainArcherPerception>();
+            health = GetComponent<MountainArcherHealth>();
+            agentCollider = GetComponent<Collider>();
+            audioSource = GetComponent<AudioSource>();
+
             BuildBehaviorTree();
         }
 
@@ -95,7 +104,6 @@ namespace JadeSeal.EnemyAI.Core
         {
             if (bowFirePoint == null)
             {
-                // Default fire point at chest level
                 GameObject fp = new GameObject("DefaultBowFirePoint");
                 fp.transform.SetParent(transform);
                 fp.transform.localPosition = new Vector3(0, 1.4f, 0.5f);
@@ -108,13 +116,15 @@ namespace JadeSeal.EnemyAI.Core
         private void BuildBehaviorTree()
         {
             // Root Selector: Priority of behaviors
-            // 1. Tactical Kiting (Retreat if player gets too close)
-            // 2. Ranged Combat (Aim and shoot if in range and has LOS)
-            // 3. Tactical Reposition (Seek high ground vantage point if lost LOS or too far)
-            // 4. Mountain Patrol (Patrol waypoints when idle)
+            // 1. Dead & Stun Check
+            // 2. Tactical Distance Keeping (Retreat/Kite if player too close)
+            // 3. Ranged Combat (Aim and shoot if in range and has clear LOS)
+            // 4. Chase & Reposition (Run towards target / vantage point if out of range or LOS blocked)
+            // 5. Mountain Patrol (Walk waypoints when idle)
 
             var rootChildren = new List<BTNode>
             {
+                new BTActionNode(CheckDeadOrStunned),
                 new BTSequence(new List<BTNode>
                 {
                     new BTActionNode(CheckShouldKite),
@@ -127,8 +137,8 @@ namespace JadeSeal.EnemyAI.Core
                 }),
                 new BTSequence(new List<BTNode>
                 {
-                    new BTActionNode(CheckShouldRepositionToVantage),
-                    new BTActionNode(ExecuteRepositionToVantage)
+                    new BTActionNode(CheckShouldChaseOrReposition),
+                    new BTActionNode(ExecuteChaseAndReposition)
                 }),
                 new BTActionNode(ExecuteMountainPatrol)
             };
@@ -138,6 +148,8 @@ namespace JadeSeal.EnemyAI.Core
 
         private void Update()
         {
+            if (isDead || isStunned) return;
+
             perception.UpdatePerception();
             TrackTargetVelocity();
             behaviorTreeRoot?.Evaluate();
@@ -160,7 +172,54 @@ namespace JadeSeal.EnemyAI.Core
             }
         }
 
+        #region Damage & State Notifications
+
+        public void OnHitStunStarted(float duration)
+        {
+            if (isDead) return;
+            isStunned = true;
+            if (navAgent != null && navAgent.isActiveAndEnabled)
+            {
+                navAgent.isStopped = true;
+            }
+        }
+
+        public void OnHitStunEnded()
+        {
+            if (isDead) return;
+            isStunned = false;
+        }
+
+        public void OnAgentDied()
+        {
+            isDead = true;
+            CurrentState = ArcherState.Dead;
+            if (navAgent != null && navAgent.isActiveAndEnabled)
+            {
+                navAgent.isStopped = true;
+                navAgent.enabled = false;
+            }
+        }
+
+        #endregion
+
         #region Behavior Tree Action Implementations
+
+        private NodeState CheckDeadOrStunned()
+        {
+            if (isDead)
+            {
+                CurrentState = ArcherState.Dead;
+                return NodeState.SUCCESS;
+            }
+
+            if (isStunned)
+            {
+                return NodeState.RUNNING;
+            }
+
+            return NodeState.FAILURE;
+        }
 
         private NodeState CheckShouldKite()
         {
@@ -176,6 +235,7 @@ namespace JadeSeal.EnemyAI.Core
             CurrentState = ArcherState.Kiting;
             var config = GetEvaluationConfig();
 
+            // Computes retreat / sidestep position along NavMesh around mountain obstacles
             if (TacticalPositionEvaluator.FindTacticalKitePosition(
                 transform.position,
                 perception.CurrentTarget.position,
@@ -209,9 +269,10 @@ namespace JadeSeal.EnemyAI.Core
             navAgent.isStopped = true;
 
             // Compute predictive lead aim vector
+            Vector3 targetHeadCenter = perception.CurrentTarget.position + Vector3.up * 1.0f;
             Vector3 aimTarget = PredictiveAimSolver.CalculateLeadAimPoint(
                 bowFirePoint.position,
-                perception.CurrentTarget.position + Vector3.up * 1.0f,
+                targetHeadCenter,
                 targetVelocity,
                 arrowSpeed);
 
@@ -245,7 +306,7 @@ namespace JadeSeal.EnemyAI.Core
             return NodeState.RUNNING;
         }
 
-        private NodeState CheckShouldRepositionToVantage()
+        private NodeState CheckShouldChaseOrReposition()
         {
             if (!perception.IsTargetPerceived) return NodeState.FAILURE;
 
@@ -256,11 +317,12 @@ namespace JadeSeal.EnemyAI.Core
             return (outOfRange || noLOS) ? NodeState.SUCCESS : NodeState.FAILURE;
         }
 
-        private NodeState ExecuteRepositionToVantage()
+        private NodeState ExecuteChaseAndReposition()
         {
-            CurrentState = ArcherState.Repositioning;
+            CurrentState = ArcherState.Chase;
             var config = GetEvaluationConfig();
 
+            // Evaluates high-ground vantage points on NavMesh around rocks and structures
             if (TacticalPositionEvaluator.FindBestVantagePosition(
                 transform.position,
                 perception.LastKnownPosition,
@@ -280,8 +342,9 @@ namespace JadeSeal.EnemyAI.Core
                 return NodeState.RUNNING;
             }
 
-            // Fallback: move towards last known position
+            // Fallback: Chase directly towards last known position on NavMesh
             navAgent.isStopped = false;
+            navAgent.speed = runSpeed;
             navAgent.SetDestination(perception.LastKnownPosition);
             return NodeState.RUNNING;
         }
@@ -320,9 +383,22 @@ namespace JadeSeal.EnemyAI.Core
             ArrowProjectile arrow = arrowObj.GetComponent<ArrowProjectile>();
             if (arrow == null) arrow = arrowObj.AddComponent<ArrowProjectile>();
 
+            // Ignore collision between archer's body and its own arrow
+            if (agentCollider != null)
+            {
+                arrow.SetShooter(agentCollider);
+            }
+
             Vector3 fireDirection = (targetLeadPoint - bowFirePoint.position).normalized;
             arrow.Launch(fireDirection, arrowSpeed);
-            Debug.Log($"[MountainArcher] Fired predictive arrow towards {targetLeadPoint} (Speed: {arrowSpeed}m/s)");
+
+            // Play bow release sound if assigned
+            if (audioSource != null && bowReleaseSound != null)
+            {
+                audioSource.PlayOneShot(bowReleaseSound);
+            }
+
+            Debug.Log($"<color=#00FF99>[MountainArcher]</color> Fired predictive arrow towards {targetLeadPoint} (Speed: {arrowSpeed}m/s)");
         }
 
         private TacticalPositionEvaluator.EvaluationParams GetEvaluationConfig()
@@ -343,7 +419,6 @@ namespace JadeSeal.EnemyAI.Core
         {
             if (arrowPrefab != null) return;
 
-            // Generate procedural arrow model if no external asset assigned
             arrowPrefab = new GameObject("ProceduralArrowPrefab");
             var capsule = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
             capsule.transform.SetParent(arrowPrefab.transform);
@@ -362,7 +437,7 @@ namespace JadeSeal.EnemyAI.Core
             arrowPrefab.SetActive(false);
         }
 
-        #region In-Engine Gizmos & Diagnostics
+        #region In-Engine Gizmos & OnGUI Dashboard
 
         private void OnDrawGizmosSelected()
         {
@@ -399,16 +474,23 @@ namespace JadeSeal.EnemyAI.Core
 
         private void OnGUI()
         {
-            GUI.Box(new Rect(20, 20, 360, 250), GUIContent.none);
-            GUILayout.BeginArea(new Rect(25, 25, 350, 240));
+            GUI.Box(new Rect(20, 20, 360, 280), GUIContent.none);
+            GUILayout.BeginArea(new Rect(25, 25, 350, 270));
 
             GUIStyle titleStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 14, fontStyle = FontStyle.Bold };
             GUIStyle textStyle = new GUIStyle(GUI.skin.label) { richText = true, fontSize = 12 };
 
             GUILayout.Label("<color=#00FF99>🏹 MOUNTAIN ARCHER AI (SE3062)</color>", titleStyle);
-            GUILayout.Label($"<b>Behavior State:</b> <color=yellow>{CurrentState}</color>", textStyle);
+            
+            string stateColor = (CurrentState == ArcherState.Dead) ? "#FF0000" : (CurrentState == ArcherState.Shooting ? "#FF9900" : "yellow");
+            GUILayout.Label($"<b>Behavior State:</b> <color={stateColor}>{CurrentState}</color>", textStyle);
 
-            float speed = navAgent != null ? navAgent.velocity.magnitude : 0f;
+            if (health != null)
+            {
+                GUILayout.Label($"<b>Health:</b> <color=#00FF99>{health.CurrentHealth:F0} / {health.MaxHealth:F0}</color>", textStyle);
+            }
+
+            float speed = navAgent != null && navAgent.isActiveAndEnabled ? navAgent.velocity.magnitude : 0f;
             GUILayout.Label($"<b>Locomotion Speed:</b> {speed:F2} m/s", textStyle);
 
             if (perception != null && perception.CurrentTarget != null)
@@ -424,15 +506,20 @@ namespace JadeSeal.EnemyAI.Core
                 GUILayout.Label("<b>Target:</b> <color=gray>Patrolling Mountain Pass</color>", textStyle);
             }
 
-            GUILayout.Space(8);
-            if (GUILayout.Button("⚡ Trigger Player Rush (7m - Test Kiting)", GUILayout.Height(30)))
+            GUILayout.Space(6);
+            if (GUILayout.Button("⚡ Trigger Player Rush (6m - Test Distance Keeping)", GUILayout.Height(28)))
             {
-                TriggerTestTarget(6.5f);
+                TriggerTestTarget(6.0f);
             }
-            GUILayout.Space(4);
-            if (GUILayout.Button("🎯 Move Player Far (16m - Test Archery)", GUILayout.Height(30)))
+            GUILayout.Space(2);
+            if (GUILayout.Button("🎯 Move Player to Archery Range (16m - Test Shoot)", GUILayout.Height(28)))
             {
                 TriggerTestTarget(16f);
+            }
+            GUILayout.Space(2);
+            if (GUILayout.Button("⚔️ Simulate Player Attack (-25 HP on Archer)", GUILayout.Height(28)))
+            {
+                if (health != null) health.TakeDamage(25f);
             }
 
             GUILayout.EndArea();
@@ -447,6 +534,10 @@ namespace JadeSeal.EnemyAI.Core
                 testTarget.name = "Test_Player_Target";
                 testTarget.tag = "Player";
                 testTarget.GetComponent<Renderer>().material.color = Color.cyan;
+                
+                // Add test player combat component
+                var playerHealth = testTarget.AddComponent<TestPlayerCombatTarget>();
+                playerHealth.SetArcherReference(this);
             }
 
             Vector3 targetPos = transform.position + transform.forward * distance;

@@ -44,11 +44,14 @@ namespace JadeSeal.EnemyAI.Editor
             nav.speed = 4.2f;
             nav.angularSpeed = 240f;
             nav.acceleration = 12f;
-            nav.stoppingDistance = 0.5f;
-            nav.radius = 0.45f;
-            nav.height = 1.9f;
+            // Capsule Collider for hit detection
+            var col = archerObj.AddComponent<CapsuleCollider>();
+            col.radius = 0.45f;
+            col.height = 1.9f;
+            col.center = new Vector3(0, 0.95f, 0);
 
-            // Core AI Components
+            // Core AI & Combat Components
+            archerObj.AddComponent<MountainArcherHealth>();
             archerObj.AddComponent<MountainArcherPerception>();
             var agent = archerObj.AddComponent<MountainArcherAgent>();
             archerObj.AddComponent<MountainArcherVisualizer>();
@@ -143,6 +146,39 @@ namespace JadeSeal.EnemyAI.Editor
             {
                 Debug.LogWarning($"[MountainArcher] 3D Model not found at path: {modelPath}");
             }
+        }
+
+        [MenuItem("The Jade Seal/AI/Spawn Interactive Test Player (WASD + Combat)", false, 12)]
+        public static void SpawnInteractiveTestPlayer()
+        {
+            var archer = Object.FindFirstObjectByType<MountainArcherAgent>();
+            Vector3 spawnPos = (archer != null) ? archer.transform.position + archer.transform.forward * 12f : Vector3.zero;
+
+            if (NavMesh.SamplePosition(spawnPos, out NavMeshHit hit, 8f, NavMesh.AllAreas))
+            {
+                spawnPos = hit.position;
+            }
+
+            GameObject playerObj = GameObject.Find("Test_Player_Target");
+            if (playerObj == null)
+            {
+                playerObj = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+                playerObj.name = "Test_Player_Target";
+                playerObj.tag = "Player";
+                playerObj.GetComponent<Renderer>().material.color = Color.cyan;
+            }
+
+            playerObj.transform.position = spawnPos;
+
+            var combat = playerObj.GetComponent<TestPlayerCombatTarget>();
+            if (combat == null) combat = playerObj.AddComponent<TestPlayerCombatTarget>();
+            combat.SetArcherReference(archer);
+
+            Selection.activeGameObject = playerObj;
+            SceneView.lastActiveSceneView?.FrameSelected();
+
+            Undo.RegisterCreatedObjectUndo(playerObj, "Spawn Interactive Test Player");
+            Debug.Log($"<color=#00FF99><b>[TestPlayer]</b> Spawned interactive player at {spawnPos}! Use WASD to move and Left-Click to attack!</color>");
         }
     }
 }
