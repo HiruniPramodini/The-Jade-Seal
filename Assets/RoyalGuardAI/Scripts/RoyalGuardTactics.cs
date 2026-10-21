@@ -8,7 +8,7 @@ namespace JadeSeal.RoyalGuard
         public float Score { get; private set; }
         RoyalGuardCoverPoint rejected;
         float retryAt;
-        public void Reject() { rejected = Selected; retryAt = Time.time + 5; Release(); }
+        public void Reject() { if (Selected) { rejected = Selected; retryAt = Time.time + 5; } Release(); }
         public void Release()
         {
             if (Selected) Selected.Release(GetComponent<RoyalGuardBrain>());
@@ -45,3 +45,4 @@ namespace JadeSeal.RoyalGuard
         void OnDisable() { Release(); }
     }
 }
+

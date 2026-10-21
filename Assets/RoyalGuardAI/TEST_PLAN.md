@@ -28,3 +28,5 @@ Use a copied scene, exact editor version, Console clear and an assigned player/d
 | Stability | Run several minutes with multiple guards and moving player; capture state durations and profile tactical evaluations |
 
 Screenshots: select guard for FOV/range/memory Gizmos, select cover for hide/peek, enable Navigation overlay, show settings and clear Console. Video or sequential timestamps are required for transitions/cooldowns; a single screenshot is insufficient. Verify blue NavMesh and advancing agent positions, not just Play button state. Model/animation/audio quality and gameplay difficulty require human review.
+
+A separate batch-only real-frame harness is `JadeSeal.RoyalGuard.Editor.RoyalGuardPlayValidation.Run`; it enters Play Mode in a fresh unsaved scene and exits the Editor. See VALIDATION_REPORT.md for exact invocation and actual coverage. It is intentionally separate from the deterministic editor checks and the manual world-scene matrix above.

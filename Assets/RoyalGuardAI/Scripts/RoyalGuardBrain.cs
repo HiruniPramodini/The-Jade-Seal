@@ -113,7 +113,7 @@ namespace JadeSeal.RoyalGuard
                     break;
                 case RoyalGuardUtility.State.Attack:
                     nav.Stop(); Face();
-                    if (sense.Visible && sense.player && Vector3.Distance(transform.position, sense.AimPosition) <= settings.attackRange &&
+                    if (sense.Visible && sense.player && sense.player.gameObject.activeInHierarchy && Vector3.Distance(transform.position, sense.AimPosition) <= settings.attackRange &&
                         weapon.ClearShot(sense.AimPosition, sense.obstacles)) weapon.TryFire(sense.AimPosition, gameObject);
                     break;
                 case RoyalGuardUtility.State.Reload:
@@ -149,4 +149,5 @@ namespace JadeSeal.RoyalGuard
         }
     }
 }
+
 

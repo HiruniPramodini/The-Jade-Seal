@@ -1,0 +1,21 @@
+PASS Missing target invalidates Attack
+PASS Lost visible target investigates memory
+PASS Emergency retreat bypasses dwell even without cover
+PASS Reload bypasses dwell
+PASS No-cover ranged fallback remains feasible
+PASS Obstruction invalidates attack immediately
+PASS At hide position moves toward peek
+PASS Peek arrival permits Attack
+PASS Invalid current action bypasses minimum dwell
+PASS Hysteresis retains feasible state against small advantage
+PASS Maximum duration releases score margin
+PASS Minimum dwell holds feasible state
+PASS Stronger challenger wins after dwell
+PASS Cover rewards occlusion with bounded score
+PASS Path length penalizes detours
+PASS Cover rewards tactical firing opportunity
+PASS Zero weight sum is finite
+PASS Damage decrements durable health
+PASS Negative damage ignored
+PASS Death fires once and cannot heal
+PASS Placeholder prefab has settings and navigation

@@ -17,7 +17,7 @@ namespace JadeSeal.RoyalGuard.Editor
             Directory.CreateDirectory(Root + "/Prefabs");
             var settings = AssetDatabase.LoadAssetAtPath<RoyalGuardSettings>(Root + "/DefaultSettings.asset");
             if (!settings) { settings = ScriptableObject.CreateInstance<RoyalGuardSettings>(); AssetDatabase.CreateAsset(settings, Root + "/DefaultSettings.asset"); }
-            var bolt = GameObject.CreatePrimitive(PrimitiveType.Cube); bolt.name = "RoyalGuardBolt_PLACEHOLDER";
+            var bolt = GameObject.CreatePrimitive(PrimitiveType.Cube); bolt.name = "RoyalGuardBolt_PLACEHOLDER"; bolt.layer = 2;
             bolt.transform.localScale = new Vector3(.045f, .045f, .4f);
             var rb = bolt.AddComponent<Rigidbody>(); rb.useGravity = false; rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             bolt.AddComponent<RoyalGuardProjectile>();
@@ -98,5 +98,6 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
+
 
 
