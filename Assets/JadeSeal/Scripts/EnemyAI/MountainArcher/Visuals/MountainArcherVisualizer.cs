@@ -33,6 +33,20 @@ namespace JadeSeal.EnemyAI.Visuals
         [SerializeField] private Transform visualRoot;
         [SerializeField] private Transform bowProp;
 
+        [Header("Character Appearance & Material Styling")]
+        [Tooltip("Material for the hunter dress / tunic.")]
+        [SerializeField] private Material dressMaterial;
+        [Tooltip("Material for the character skin.")]
+        [SerializeField] private Material skinMaterial;
+        [Tooltip("Material for the wooden bow.")]
+        [SerializeField] private Material bowMaterial;
+        [Tooltip("Dress / Costume color for the mountain archer.")]
+        [SerializeField] private Color dressColor = new Color(0.18f, 0.38f, 0.28f); // Mountain Hunter Jade Green
+        [Tooltip("Skin tone color for the mountain archer.")]
+        [SerializeField] private Color skinColor = new Color(0.88f, 0.72f, 0.60f); // Warm natural skin
+        [Tooltip("Wood color for the bow.")]
+        [SerializeField] private Color bowColor = new Color(0.35f, 0.20f, 0.12f); // Seasoned ironwood
+
         // Cached Parameter Hashes
         private int speedHash;
         private int isAimingHash;
@@ -97,11 +111,71 @@ namespace JadeSeal.EnemyAI.Visuals
             }
 
             BuildProceduralPrototypeIfNeeded();
+            ApplyCharacterStyling();
         }
 
         private void Start()
         {
             DisableBlenderRogueLights();
+            ApplyCharacterStyling();
+        }
+
+        public void ApplyCharacterStyling()
+        {
+            Shader standardShader = Shader.Find("Standard");
+            if (standardShader == null) standardShader = Shader.Find("Universal Render Pipeline/Lit");
+            if (standardShader == null) standardShader = Shader.Find("Sprites/Default");
+
+            Material activeDressMat = dressMaterial;
+            if (activeDressMat == null && standardShader != null)
+            {
+                activeDressMat = new Material(standardShader) { name = "Runtime_ArcherDress", color = dressColor };
+                activeDressMat.SetFloat("_Glossiness", 0.18f);
+            }
+
+            Material activeSkinMat = skinMaterial;
+            if (activeSkinMat == null && standardShader != null)
+            {
+                activeSkinMat = new Material(standardShader) { name = "Runtime_ArcherSkin", color = skinColor };
+                activeSkinMat.SetFloat("_Glossiness", 0.25f);
+            }
+
+            Material activeBowMat = bowMaterial;
+            if (activeBowMat == null && standardShader != null)
+            {
+                activeBowMat = new Material(standardShader) { name = "Runtime_ArcherBow", color = bowColor };
+                activeBowMat.SetFloat("_Glossiness", 0.35f);
+            }
+
+            // Apply to all child renderers (SkinnedMeshRenderer & MeshRenderer)
+            Renderer[] allRenderers = GetComponentsInChildren<Renderer>(true);
+            foreach (var r in allRenderers)
+            {
+                string rName = r.name.ToLower();
+                // Dress / Clothes / Costume
+                if (rName.Contains("clothes") || rName.Contains("dress") || rName.Contains("tunic") || (rName.Contains("body") && r.name == "Body" && !(r is SkinnedMeshRenderer)))
+                {
+                    if (activeDressMat != null) r.material = activeDressMat;
+                }
+                // Skin / Body / Face
+                else if (rName.Contains("body") || rName.Contains("skin") || rName.Contains("face") || rName.Contains("head"))
+                {
+                    if (activeSkinMat != null) r.material = activeSkinMat;
+                }
+                // Bow & Arrow
+                else if (rName.Contains("bow") || rName.Contains("arrow"))
+                {
+                    if (activeBowMat != null) r.material = activeBowMat;
+                }
+            }
+        }
+
+        public void ConfigureAppearanceMaterials(Material dress, Material skin, Material bow)
+        {
+            if (dress != null) dressMaterial = dress;
+            if (skin != null) skinMaterial = skin;
+            if (bow != null) bowMaterial = bow;
+            ApplyCharacterStyling();
         }
 
         public void DisableBlenderRogueLights()
@@ -421,6 +495,7 @@ namespace JadeSeal.EnemyAI.Visuals
             // Find Animator on new model
             characterAnimator = newModelInstance.GetComponentInChildren<Animator>();
             ResolveAnimator();
+            ApplyCharacterStyling();
 
             Debug.Log($"<color=#00FF99>[MountainArcherVisualizer]</color> Bound new model '{newModelInstance.name}' with Animator: {(characterAnimator != null ? "FOUND" : "NONE")}");
         }

@@ -152,14 +152,37 @@ namespace JadeSeal.EnemyAI.Editor
                     Object.DestroyImmediate(l.gameObject);
                 }
 
-                // Inform Visualizer to bind Animator and clean up any old visuals
+                // Assign authentic Mountain Archer materials (Skin, Dress/Costume, Bow)
+                Material skinMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/JadeSeal/Characters/MountainArcher/Materials/M_MountainArcher_Skin.mat");
+                Material dressMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/JadeSeal/Characters/MountainArcher/Materials/M_MountainArcher_Dress.mat");
+                Material bowMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/JadeSeal/Characters/MountainArcher/Materials/M_MountainArcher_Bow.mat");
+
+                foreach (var r in modelInstance.GetComponentsInChildren<Renderer>(true))
+                {
+                    string rName = r.name.ToLower();
+                    if (rName.Contains("clothes") || rName.Contains("dress") || rName.Contains("tunic"))
+                    {
+                        if (dressMat != null) r.sharedMaterial = dressMat;
+                    }
+                    else if (rName.Contains("body") || rName.Contains("skin") || rName.Contains("face") || rName.Contains("head"))
+                    {
+                        if (skinMat != null) r.sharedMaterial = skinMat;
+                    }
+                    else if (rName.Contains("bow") || rName.Contains("arrow"))
+                    {
+                        if (bowMat != null) r.sharedMaterial = bowMat;
+                    }
+                }
+
+                // Inform Visualizer to bind Animator, configure materials, and clean up any old visuals
                 var visualizer = archerObj.GetComponent<MountainArcherVisualizer>();
                 if (visualizer != null)
                 {
+                    visualizer.ConfigureAppearanceMaterials(dressMat, skinMat, bowMat);
                     visualizer.BindNewCharacterModel(modelInstance);
                 }
 
-                Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully attached official 3D model '{modelPrefab.name}' to {archerObj.name}!</color>");
+                Debug.Log($"<color=#00FF99><b>[MountainArcher]</b> Successfully attached official 3D model '{modelPrefab.name}' with Skin & Dress styling to {archerObj.name}!</color>");
             }
             else
             {
