@@ -14,6 +14,7 @@ namespace JadeSeal.RoyalGuard
         {
             owner = shooter;
             damage = projectileDamage;
+            if (owner) foreach (var ownCollider in owner.GetComponentsInChildren<Collider>()) Physics.IgnoreCollision(GetComponent<Collider>(), ownCollider);
             Destroy(gameObject, lifetime);
         }
         private void OnCollisionEnter(Collision collision)
@@ -35,3 +36,4 @@ namespace JadeSeal.RoyalGuard
     }
     public interface IRoyalGuardDamageable { void TakeDamage(float damage); }
 }
+

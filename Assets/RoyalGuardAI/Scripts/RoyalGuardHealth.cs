@@ -3,17 +3,18 @@ using UnityEngine;
 
 namespace JadeSeal.RoyalGuard
 {
-    public sealed class RoyalGuardHealth : MonoBehaviour
+    public sealed class RoyalGuardHealth : MonoBehaviour, IRoyalGuardDamageable
     {
         [SerializeField, Min(1f)] private float maxHealth = 180f;
         public float MaxHealth => maxHealth;
         public float CurrentHealth { get; private set; }
-        public float Ratio => Mathf.Clamp01(CurrentHealth / maxHealth);
+        public float Ratio => Mathf.Clamp01(CurrentHealth / Mathf.Max(1f, maxHealth));
         public bool IsDead => CurrentHealth <= 0f;
         public event Action<float> Damaged;
         public event Action Died;
 
-        private void Awake() { CurrentHealth = maxHealth; }
+        private void Awake() { CurrentHealth = Mathf.Max(1f, maxHealth); }
+        public void Recover(float amount, float capRatio) { if (!IsDead && amount > 0) CurrentHealth = Mathf.Max(CurrentHealth, Mathf.Min(maxHealth * Mathf.Clamp01(capRatio), CurrentHealth + amount)); }
         public void TakeDamage(float damage)
         {
             if (IsDead || damage <= 0f) return;
@@ -23,3 +24,4 @@ namespace JadeSeal.RoyalGuard
         }
     }
 }
+

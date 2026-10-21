@@ -17,6 +17,7 @@ namespace JadeSeal.RoyalGuard
         public bool IsReloading => reloadEndsAt >= 0f;
         public bool NeedsReload => ammunition == 0;
         public float ReloadDuration => reloadSeconds;
+        public bool ClearShot(Vector3 target, LayerMask obstacles) => muzzle && !Physics.Linecast(muzzle.position, target, obstacles, QueryTriggerInteraction.Ignore);
         public bool CanFire => !IsReloading && ammunition > 0 && Time.time >= nextFireTime;
         private void Awake() { ammunition = magazineSize; }
         private void Update()
@@ -42,10 +43,11 @@ namespace JadeSeal.RoyalGuard
             Rigidbody rb = bolt.GetComponent<Rigidbody>();
             rb.useGravity = false;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-            rb.velocity = direction * boltSpeed; // Unity 2021-2023; Unity 6 also supports velocity (obsolete warning).
+            rb.linearVelocity = direction * boltSpeed;
             ammunition--;
             nextFireTime = Time.time + fireInterval;
             return true;
         }
     }
 }
+
