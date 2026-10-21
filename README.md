@@ -18,9 +18,9 @@ An academic Unity project combining a temple-and-mountain fantasy world with ind
 
 </div>
 
-![Approved courtyard visual review: preserved appearance on the left and final cleared appearance on the right](Documentation/VisualReview/02_Courtyard.png)
+![The Jade Seal promotional panorama with four enemies naturally posed before the temple, forest and mountain landscape](Documentation/Promotional/The-Jade-Seal-Hero.png)
 
-*Existing approved environment comparison, not a combat screenshot. See [visual approvals](Documentation/Handoff/VISUAL_APPROVAL.md).*
+*AI-generated promotional artwork based on the supplied character and environment references. The composition is illustrative, not an in-game screenshot.*
 
 > **Repository snapshot — 21 October 2026:** `main` includes the complete environment through PR #1 (`13d3406`, incorporating `3f4a16e`). The Royal Guard implementation is on `feature/royal-guard-ai` (`c0fa941`) and is **not integrated into main**. The other three autonomous agents and the complete player combat loop are not verified as implemented. The AI badges describe the Royal Guard branch; they do not imply four integrated enemies.
 
