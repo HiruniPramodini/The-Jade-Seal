@@ -67,6 +67,19 @@ namespace JadeSeal.EnemyAI.Visuals
         private Transform boneLeftLeg;
         private Transform boneRightLeg;
 
+        // Bind Pose Rotations Cache (Prevents limb flipping/inverting)
+        private bool hasInitializedBoneRotations = false;
+        private Quaternion initHips;
+        private Quaternion initSpine;
+        private Quaternion initLeftArm;
+        private Quaternion initRightArm;
+        private Quaternion initLeftForeArm;
+        private Quaternion initRightForeArm;
+        private Quaternion initLeftUpLeg;
+        private Quaternion initRightUpLeg;
+        private Quaternion initLeftLeg;
+        private Quaternion initRightLeg;
+
         private void Awake()
         {
             agent = GetComponent<MountainArcherAgent>();
