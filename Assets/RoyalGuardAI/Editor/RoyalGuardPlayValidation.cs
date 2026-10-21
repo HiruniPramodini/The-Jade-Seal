@@ -98,7 +98,38 @@ namespace JadeSeal.RoyalGuard.Editor
                     sense.Forget(); Check(!sense.HasMemory(settings.memorySeconds), "Explicit memory expiry returns no target memory");
                     var health = guard.GetComponent<RoyalGuardHealth>();
                     health.TakeDamage(150); health.Recover(100, .55f); Check(Mathf.Approximately(health.CurrentHealth, 99), "Recovery capped at configured ratio");
-                    health.TakeDamage(1000); Check(health.IsDead && !guard.GetComponent<RoyalGuardBrain>().enabled, "Lethal damage stops brain in Play Mode");
+                    target = GameObject.CreatePrimitive(PrimitiveType.Capsule); target.layer = 2; target.transform.position = guard.transform.position + Vector3.forward * 8;
+                    target.GetComponent<CapsuleCollider>().center = Vector3.up;
+                    sense.player = target.transform; guard.transform.rotation = Quaternion.identity; Physics.SyncTransforms(); sense.Sample(settings);
+                    var coverGo = new GameObject("TestCover"); coverGo.transform.position = guard.transform.position + Vector3.forward * 2;
+                    var cover = coverGo.AddComponent<RoyalGuardCoverPoint>();
+                    var peek = new GameObject("TestPeek").transform; peek.position = guard.transform.position + new Vector3(3, 0, 4); Set(cover, "peekPosition", peek);
+                    wall.transform.position = guard.transform.position + new Vector3(0, 1.5f, 4); wall.SetActive(true); Physics.SyncTransforms();
+                    var tactics = guard.GetComponent<RoyalGuardTactics>(); tactics.coverPoints = new[] { cover };
+                    tactics.Select(nav, sense, settings, false);
+                    Check(tactics.Selected == cover && tactics.Score > 0, "Occluded reachable hide with clear peek wins cover selection");
+                    var other = UnityEngine.Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/RoyalGuardAI/Prefabs/RoyalGuard.prefab"), new Vector3(10, 0, 0), Quaternion.identity);
+                    other.GetComponent<RoyalGuardBrain>().enabled = false;
+                    Check(!cover.Reserve(other.GetComponent<RoyalGuardBrain>()), "Cover reservation excludes second guard");
+                    UnityEngine.Object.DestroyImmediate(other);
+                    cover.enabled = false; tactics.Select(nav, sense, settings, false);
+                    Check(!tactics.Selected, "Disabled cover is dynamically released");
+                    tactics.coverPoints = new RoyalGuardCoverPoint[0]; wall.SetActive(false); Physics.SyncTransforms();
+                    Set(weapon, "magazineSize", 100); Set(weapon, "ammunition", 100);
+                    guard.GetComponent<RoyalGuardBrain>().enabled = true;
+                    started = Time.time; stage = 4;
+                }
+                else if (stage == 4 && Time.time > started + .6f)
+                {
+                    Check(guard.GetComponent<RoyalGuardBrain>().CurrentAction == RoyalGuardUtility.State.Attack, "Autonomous brain enters Attack with no cover and clear target");
+                    guard.GetComponent<RoyalGuardHealth>().TakeDamage(60);
+                    started = Time.time; stage = 5;
+                }
+                else if (stage == 5 && Time.time > started + .4f)
+                {
+                    Check(guard.GetComponent<RoyalGuardBrain>().CurrentAction == RoyalGuardUtility.State.Retreat, "Autonomous low-health transition enters Retreat");
+                    var health = guard.GetComponent<RoyalGuardHealth>(); health.TakeDamage(1000);
+                    Check(health.IsDead && !guard.GetComponent<RoyalGuardBrain>().enabled, "Lethal damage stops brain in Play Mode");
                     Finish(0);
                 }
                 if (EditorApplication.timeSinceStartup > deadline && stage > 0) Finish(1, "45-second frame advancement timeout");
@@ -107,3 +138,4 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
+

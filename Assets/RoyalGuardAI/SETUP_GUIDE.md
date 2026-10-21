@@ -33,4 +33,5 @@ Replace only the `TemporaryVisual_ReplaceWithLicensedModel` and `Crossbow_PLACEH
 
 ## Diagnostics
 
-Select the guard for range/FOV/memory Gizmos and cover objects for hide/peek Gizmos. Watch Brain.CurrentAction and DebugStatus through a debugger or optional custom UI; these are runtime properties, not serialized Inspector values. Inspector tuning lives in DefaultSettings, Perception, Tactics, Crossbow and Health. Duplicate DefaultSettings to tune guard variants independently. Use a debug Inspector or add a HUD that reads DebugStatus for screenshots.
+Select the guard for range/FOV/memory Gizmos and cover objects for hide/peek Gizmos. The Brain custom Inspector shows CurrentAction, visibility, memory, cover score and navigation failure during Play Mode. CurrentAction and DebugStatus are also public runtime properties for an optional HUD. Inspector tuning lives in DefaultSettings, Perception, Tactics, Crossbow and Health. Duplicate DefaultSettings to tune guard variants independently. Use a debug Inspector or add a HUD that reads DebugStatus for screenshots.
+

@@ -51,6 +51,9 @@ namespace JadeSeal.RoyalGuard
                     tactics.Select(nav, sense, settings, retreating);
                 }
                 if (!sense.Visible && !memory) tactics.Release();
+                if (Time.time - entered > settings.maximumStateSeconds &&
+                    (CurrentAction == RoyalGuardUtility.State.SeekCover || CurrentAction == RoyalGuardUtility.State.Reposition))
+                { tactics.Reject(); nextCover = 0; entered = Time.time; nav.Refresh(); }
                 var cover = tactics.Selected;
                 bool hide = cover && Vector3.Distance(transform.position, cover.HidePosition) < .8f;
                 bool peek = cover && Vector3.Distance(transform.position, cover.PeekPosition) < .8f;
@@ -146,3 +149,4 @@ namespace JadeSeal.RoyalGuard
         }
     }
 }
+
