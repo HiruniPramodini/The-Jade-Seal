@@ -1,0 +1,21 @@
+PASS Boss max health is substantially high (>= 1000 HP)
+PASS Boss starts with full health
+PASS Damage decrements health accurately
+PASS Negative damage is ignored
+PASS Guarding reduces incoming damage by 75%
+PASS Lethal damage clamps to zero and cannot heal
+PASS Died event fires strictly once
+PASS Basic magic ready after cooldown reset
+PASS Fireball ready after cooldown reset
+PASS Stomp ready after cooldown reset
+PASS Basic magic enters cooldown immediately after fire
+PASS Fireball enters cooldown immediately after launch
+PASS Stomp enters cooldown immediately after impact
+PASS FinalBoss prefab exists
+PASS FinalBoss has Brain component
+PASS FinalBoss has Health component
+PASS FinalBoss has Perception component
+PASS FinalBoss has Combat component
+PASS FinalBoss has Navigation component
+PASS FinalBoss has Guard component
+PASS FinalBoss has NavMeshAgent

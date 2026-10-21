@@ -1,0 +1,19 @@
+PASS Runtime test NavMesh built and registered
+PASS Boss NavMeshAgent successfully bound to runtime NavMesh
+PASS Boss recognizes player inside active arena
+PASS Boss retains magical player awareness even when player is behind cover
+PASS Basic magic is ready to cast
+PASS Basic magic enters cooldown immediately after fire
+PASS Basic magic projectile delivered damage to player target
+PASS Giant fireball is ready to launch
+PASS Fireball enters cooldown immediately after launch
+PASS Giant fireball delivered high-impact direct/splash damage
+PASS Stomp shockwave is ready to trigger
+PASS Stomp enters cooldown immediately after trigger
+PASS Stomp shockwave expanded and damaged player target
+PASS Boss possesses massive durability health pool (>= 1400 HP)
+PASS Boss entered defensive guarding state
+PASS Guarding reduced incoming damage by 75% (took 25 instead of 100)
+PASS Guarding state ended cleanly
+PASS Boss died upon receiving lethal damage
+PASS Died event fired strictly once on fatal blow
