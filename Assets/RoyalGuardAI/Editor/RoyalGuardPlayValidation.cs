@@ -139,5 +139,3 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
-
-

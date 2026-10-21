@@ -149,5 +149,3 @@ namespace JadeSeal.RoyalGuard
         }
     }
 }
-
-

@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f08ec0d58ad8b3847955be44e63ffe0d, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardHealth
   maxHealth: 180
 --- !u!114 &5872207457365380112
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6b44eb6f866b1846a7436aafa4724ab, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardCrossbow
   muzzle: {fileID: 5166033294013060910}
   boltPrefab: {fileID: 758023527837360460, guid: fc243852050c2a84cb7fe2459ca014f2, type: 3}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c70d303d14a57f54f9add7b021b95488, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardNavigation
 --- !u!114 &7882728959238311113
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff1d4da5f0977d4439e9ef54514d4078, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardPerception
   player: {fileID: 0}
   eyes: {fileID: 8698463133338157168}
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c73eea80267f6845bb9387121b96a87, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardTactics
   coverPoints: []
 --- !u!114 &2558227282750281045
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f157584f6952a249bd7bc4bb104d005, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardBrain
   settings: {fileID: 11400000, guid: 39554574592065f449e5deb01c59dffb, type: 2}
   patrolWaypoints: []
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c16711e75b8adf44bbd2bd760d0bf54b, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::JadeSeal.RoyalGuard.RoyalGuardPresentation
   hit:
     m_PersistentCalls:

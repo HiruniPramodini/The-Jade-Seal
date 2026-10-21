@@ -50,4 +50,3 @@ namespace JadeSeal.RoyalGuard
         }
     }
 }
-

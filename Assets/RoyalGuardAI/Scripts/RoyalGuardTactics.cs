@@ -45,4 +45,3 @@ namespace JadeSeal.RoyalGuard
         void OnDisable() { Release(); }
     }
 }
-

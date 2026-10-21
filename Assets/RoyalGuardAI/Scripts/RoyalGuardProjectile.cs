@@ -36,4 +36,3 @@ namespace JadeSeal.RoyalGuard
     }
     public interface IRoyalGuardDamageable { void TakeDamage(float damage); }
 }
-

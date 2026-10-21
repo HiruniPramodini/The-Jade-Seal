@@ -1,0 +1,27 @@
+PASS Runtime test NavMesh built and registered
+PASS Guard is bound to runtime NavMesh
+PASS Distance FOV and clear line acquire player
+PASS Out-of-range target rejected
+PASS Behind-guard target rejected by FOV
+PASS Wall blocks visibility while last position persists
+PASS Muzzle obstruction prevents feasible shot
+PASS Crossbow spawns physical bolt
+PASS Empty magazine blocks duplicate shot
+PASS Reload locks firing
+PASS Last-seen memory expires with elapsed game time
+PASS Real physics collision delivers exactly one 15HP hit
+PASS Timed reload and cooldown complete
+PASS Off-mesh destination rejected
+PASS Reachable destination produces complete measured path
+PASS Validated destination accepted
+PASS NavMesh agent advances across actual frames
+PASS Disabled target cannot remain visible
+PASS Destroyed target handled without exception
+PASS Explicit memory expiry returns no target memory
+PASS Recovery capped at configured ratio
+PASS Occluded reachable hide with clear peek wins cover selection
+PASS Cover reservation excludes second guard
+PASS Disabled cover is dynamically released
+PASS Autonomous brain enters Attack with no cover and clear target
+PASS Autonomous low-health transition enters Retreat
+PASS Lethal damage stops brain in Play Mode

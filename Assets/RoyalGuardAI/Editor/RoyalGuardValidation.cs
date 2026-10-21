@@ -98,6 +98,3 @@ namespace JadeSeal.RoyalGuard.Editor
         }
     }
 }
-
-
-

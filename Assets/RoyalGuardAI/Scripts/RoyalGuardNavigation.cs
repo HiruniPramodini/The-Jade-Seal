@@ -41,5 +41,3 @@ namespace JadeSeal.RoyalGuard
         public void Stop() { if (Ready) { agent.isStopped = true; agent.ResetPath(); } }
     }
 }
-
-
