@@ -56,7 +56,7 @@ The team has **four members**, each responsible for a distinct autonomous agent.
 | Enemy / agent slot | AI technique | Combat role | Responsible member | Current status |
 |---|---|---|---|---|
 | **Royal Guard** | Utility AI, weighted cover evaluation, Unity NavMesh | Heavily armored ranged crossbow enemy | Royal Guard contributor — name to confirm | Implemented and module-tested on `feature/royal-guard-ai`; world integration pending |
-| Agent 2 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned; implementation not found |
+| Agent 2 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned;  |
 | Agent 3 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned; implementation not found |
 | Agent 4 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned; implementation not found |
 
