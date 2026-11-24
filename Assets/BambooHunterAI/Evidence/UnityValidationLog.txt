@@ -1,0 +1,2105 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.25f1 (e1dba0a9aba4) revision 14801824'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) CoreSingleLanguage' Language: 'en' Physical Memory: 12091 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-23T20:07:51Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-hp" at "2026-11-23T20:07:51.9959062Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 16464, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              6d8f28b221c449608783d7d79c7fa251
+  Correlation Id:          b48a7ee1eb987289589b6264a6ebf7b3
+  External correlation Id: 8330862489405097588
+  Machine Id:              0pM3Nmy4r+Au3XSEw1AQpfuKPDM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-hp" (connect: 0.00s, validation: 0.00s, handshake: 0.10s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-hp-notifications" at "2026-11-23T20:07:52.0938725Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968554836047-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.11s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.25f1\Editor\Unity.exe
+-batchmode
+-nographics
+-projectPath
+C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS
+-executeMethod
+JadeSeal.BambooHunter.Editor.BambooHunterValidation.RunFromMenu
+-quit
+-logFile
+Assets\BambooHunterAI\Evidence\UnityValidationLog.txt
+Successfully changed project path to: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS
+C:/Users/hp/Desktop/The-Jade-Seal-BambooHunter-IS
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [20516]  Target information:
+
+Player connection [20516]  * "[IP] 192.168.56.1 [Port] 55505 [Flags] 2 [Guid] 2288704496 [EditorId] 2288704496 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-UDGQ3R7) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [20516]  * "[IP] 192.168.8.181 [Port] 55505 [Flags] 2 [Guid] 2288704496 [EditorId] 2288704496 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-UDGQ3R7) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [20516] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [20516] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-5352" after 0.4 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.14 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.25f1 (e1dba0a9aba4)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.25f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/hp/Desktop/The-Jade-Seal-BambooHunter-IS/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.25f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.25f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56352
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002752 seconds.
+- Loaded All Assemblies, in  0.993 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.108 seconds
+Domain Reload Profiling: 2096ms
+	BeginReloadAssembly (435ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (114ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (84ms)
+	LoadAllAssembliesAndSetupDomain (332ms)
+		LoadAssemblies (398ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (326ms)
+			TypeCache.Refresh (321ms)
+				TypeCache.ScanAssembly (272ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1108ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (977ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (139ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (303ms)
+			ProcessInitializeOnLoadAttributes (325ms)
+			ProcessInitializeOnLoadMethodAttributes (200ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 38 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.16 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.ai.navigation@d0cf77b009bb)
+    com.unity.inputsystem@1.20.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+  Built-in packages:
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\hp\Desktop\The-Jade-Seal-BambooHunter-IS\Library\PackageCache\com.unity.modules.hierarchycore)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.03 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.25f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/hp/Desktop/The-Jade-Seal-BambooHunter-IS
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 4s139ms
+[223/226    3s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(432,62): warning CS0618: 'StaticEditorFlags.NavigationStatic' is obsolete: 'Enum member StaticEditorFlags.NavigationStatic has been deprecated. The precise selection of the objects is now done using NavMeshBuilder.CollectSources() and NavMeshBuildMarkup.'
+
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(546,63): warning CS0618: 'StaticEditorFlags.NavigationStatic' is obsolete: 'Enum member StaticEditorFlags.NavigationStatic has been deprecated. The precise selection of the objects is now done using NavMeshBuilder.CollectSources() and NavMeshBuildMarkup.'
+
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(586,17): warning CS0618: 'NavMeshBuilder' is obsolete: 'UnityEditor NavMeshBuilder has been deprecated. Use UnityEngine.AI.NavMeshBuilder instead.'
+
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(594,21): warning CS0618: 'NavMeshBuilder' is obsolete: 'UnityEditor NavMeshBuilder has been deprecated. Use UnityEngine.AI.NavMeshBuilder instead.'
+[224/226    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[225/226    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (4.07 seconds), 3 items updated, 226 evaluated
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(432,62): warning CS0618: 'StaticEditorFlags.NavigationStatic' is obsolete: 'Enum member StaticEditorFlags.NavigationStatic has been deprecated. The precise selection of the objects is now done using NavMeshBuilder.CollectSources() and NavMeshBuildMarkup.'
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(546,63): warning CS0618: 'StaticEditorFlags.NavigationStatic' is obsolete: 'Enum member StaticEditorFlags.NavigationStatic has been deprecated. The precise selection of the objects is now done using NavMeshBuilder.CollectSources() and NavMeshBuildMarkup.'
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(586,17): warning CS0618: 'NavMeshBuilder' is obsolete: 'UnityEditor NavMeshBuilder has been deprecated. Use UnityEngine.AI.NavMeshBuilder instead.'
+Assets\BambooHunterAI\Editor\BambooHunterAssetBuilder.cs(594,21): warning CS0618: 'NavMeshBuilder' is obsolete: 'UnityEditor NavMeshBuilder has been deprecated. Use UnityEngine.AI.NavMeshBuilder instead.'
+AssetDatabase: script compilation time: 5.271636s
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '18080' does not match file size '15101'
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.687 seconds
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '18282' does not match file size '18204'
+Start importing ProjectSettings/DynamicsManager.asset using Guid(00000000000000008000000000000000) (LibraryAssetImporter) -> (artifact id: '67b188f062251fdee32ca4d8f89c1fa0') in 0.0379763 seconds
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.288 seconds
+Domain Reload Profiling: 2970ms
+	BeginReloadAssembly (761ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (55ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (247ms)
+	RebuildCommonClasses (134ms)
+	RebuildNativeTypeToScriptingClass (38ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (709ms)
+		LoadAssemblies (1006ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (53ms)
+			TypeCache.Refresh (36ms)
+				TypeCache.ScanAssembly (27ms)
+			BuildScriptInfoCaches (9ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1289ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (958ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (79ms)
+			SetLoadedEditorAssemblies (13ms)
+			BeforeProcessingInitializeOnLoad (382ms)
+			ProcessInitializeOnLoadAttributes (372ms)
+			ProcessInitializeOnLoadMethodAttributes (99ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (52ms)
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '20040' does not match file size '18406'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0359405 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:04.7203143Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '20640' does not match file size '20299'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0345386 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:04.8113256Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '21240' does not match file size '20899'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0335464 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:04.8931875Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '21840' does not match file size '21499'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0364181 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:04.9746991Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '22440' does not match file size '22099'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0354004 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:05.0570915Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '23040' does not match file size '22699'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0353987 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:05.1452808Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '23640' does not match file size '23299'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0328111 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:05.275615Z'
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '24239' does not match file size '23899'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0380143 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:05.3631578Z'
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T19:52:12.4471224Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T19:52:19.5249384Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:05.4007149Z)
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4d12ba0cb236f234b8cb84e2c4a71ba3): Total: 9.852 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=25 (actual=9, local cache=16, cache server=0)
+		Asset DB Process Time: managed=8 ms, native=2596 ms
+		Asset DB Callback time: managed=216 ms, native=38 ms
+		Scripting: domain reloads=1, domain reload time=1688 ms, compile time=5277 ms, other=27 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=5, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.006ms
+	InvokePackagesCallback: 38.737ms
+	ApplyChangesToAssetFolders: 1.666ms
+	Scan: 590.209ms
+	OnSourceAssetsModified: 4.768ms
+	CategorizeAssetsWithTransientArtifact: 6.958ms
+	ProcessAssetsWithTransientArtifactChanges: 14.548ms
+	CategorizeAssets: 28.521ms
+	ImportOutOfDateAssets: 1660.998ms (-3965.983ms without children)
+		ImportManagerImport: 342.684ms (19.497ms without children)
+			ImportInProcess: 323.082ms
+			UpdateCategorizedAssets: 0.105ms
+		CompileScripts: 5276.966ms
+		ReloadNativeAssets: 0.006ms
+		UnloadImportedAssets: 4.581ms
+		ReloadImportedAssets: 0.002ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.775ms
+		InitializingProgressBar: 0.097ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.005ms
+		OnDemandSchedulerStart: 0.866ms
+	PostProcessAllAssets: 218.860ms
+	Hotreload: 2.179ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.005ms
+	UnloadStreamsBegin: 3.112ms
+	UnloadStreamsEnd: 0.002ms
+	GenerateScriptTypeHashes: 4.595ms
+	Untracked: 7281.507ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 2.953ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-The Jade Seal
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 520 unused Assets / (2.9 MB). Loaded Objects now: 1141.
+Memory consumption went from 112.2 MB to 109.3 MB.
+Total: 38.204300 ms (FindLiveObjects: 0.265200 ms CreateObjectMapping: 0.097900 ms MarkObjects: 28.813100 ms  DeleteObjects: 9.024700 ms)
+
+[BambooHunterAssetBuilder] Commencing deterministic build of Bamboo Hunter assets...
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:46)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+(Filename: Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs Line: 46)
+
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.018049 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:06.3620193Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '30006' does not match file size '28802'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0407089 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:06.4185576Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '32334' does not match file size '31129'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0465272 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:06.5220426Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '34662' does not match file size '33457'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.045106 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:06.6353491Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '36989' does not match file size '35785'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0486289 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:06.749153Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '39316' does not match file size '38112'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.086943 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:06.8911487Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '41643' does not match file size '40439'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0631871 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.0835494Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T19:52:19.5249384Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:07.146492Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateArrowPrefab (UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:305)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:55)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 55]
+
+Refreshing native plugins compatible for Editor in 1.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c29ab32a0a8f2854f9f94d2ee41da138): Total: 0.860 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=7, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=842 ms
+		Asset DB Callback time: managed=11 ms, native=4 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 0.004ms
+	ApplyChangesToAssetFolders: 0.886ms
+	Scan: 434.169ms
+	OnSourceAssetsModified: 0.074ms
+	CategorizeAssetsWithTransientArtifact: 0.021ms
+	ProcessAssetsWithTransientArtifactChanges: 0.120ms
+	CategorizeAssets: 6.698ms
+	ImportOutOfDateAssets: 373.405ms (1.240ms without children)
+		ImportManagerImport: 364.946ms (10.671ms without children)
+			ImportInProcess: 354.195ms
+			UpdateCategorizedAssets: 0.080ms
+		ReloadNativeAssets: 0.224ms
+		UnloadImportedAssets: 4.267ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.871ms
+		InitializingProgressBar: 0.117ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.005ms
+		OnDemandSchedulerStart: 0.734ms
+	PostProcessAllAssets: 14.302ms
+	Hotreload: 2.261ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.096ms
+	UnloadStreamsBegin: 0.204ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 27.972ms
+
+Start importing Assets/BambooHunterAI/Materials/M_PlayerDummy.mat using Guid(6250a30a42a174f44aa20af07b776061) (NativeFormatImporter) -> (artifact id: '95a00a90ed79f50d6f8a135ff9471c34') in 0.0054169 seconds
+Start importing Assets/BambooHunterAI/Materials/M_GroundForest.mat using Guid(55aba0ad34410ad4f856b24b3762632b) (NativeFormatImporter) -> (artifact id: '3b965c1a4c3995e3d9e440b99de49229') in 0.0050448 seconds
+Start importing Assets/BambooHunterAI/Materials/M_HunterHeadband.mat using Guid(a6dde12e8d5b2374d9ce000a71202ec9) (NativeFormatImporter) -> (artifact id: 'fecd369f7aceb95833c3fc97eeca97c7') in 0.006304 seconds
+Start importing Assets/BambooHunterAI/Materials/M_BambooTrunk.mat using Guid(0a37d9677080032439382c44c9f28410) (NativeFormatImporter) -> (artifact id: '24f21219814dfc2ce647e0e30a3a8574') in 0.0044435 seconds
+Start importing Assets/BambooHunterAI/Materials/M_BambooHunter.mat using Guid(8aae3d50f10c6ae4a936292b8799f0ef) (NativeFormatImporter) -> (artifact id: '647444deae1fea5e5dda72780308ee26') in 0.0051428 seconds
+Start importing Assets/BambooHunterAI/Materials/M_ArrowWood.mat using Guid(9cfad5a1cc124c14e89ce0cde5e6a7d5) (NativeFormatImporter) -> (artifact id: '169778ec602390df9b194e535eacdb45') in 0.0036323 seconds
+Start importing Assets/BambooHunterAI/Settings/BambooHunterSettings_Default.asset using Guid(f2c648eea99d31745a1048077eacd4f4) (NativeFormatImporter) -> (artifact id: '362704a24190b421740ce73f19ac4fbb') in 0.0050184 seconds
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0224151 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.3285527Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '48593' does not match file size '47802'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0553634 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.3980877Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '50093' does not match file size '49302'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.055321 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.5206624Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '51592' does not match file size '50802'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.058593 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.6256791Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '53091' does not match file size '52301'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1132382 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.7602069Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '54141' does not match file size '53350'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.047658 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:07.9901137Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '55640' does not match file size '54850'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0460461 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:08.084838Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T19:52:19.5249384Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:08.1300357Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:56)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 56]
+
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6857077e04f80bb4c8efb9736e860fec): Total: 0.892 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=7 (actual=14, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=887 ms
+		Asset DB Callback time: managed=0 ms, native=1 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 11
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 0.004ms
+	ApplyChangesToAssetFolders: 0.865ms
+	Scan: 398.515ms
+	OnSourceAssetsModified: 0.005ms
+	CategorizeAssetsWithTransientArtifact: 0.029ms
+	ProcessAssetsWithTransientArtifactChanges: 0.096ms
+	CategorizeAssets: 5.273ms
+	ImportOutOfDateAssets: 471.341ms (7.429ms without children)
+		ImportManagerImport: 456.817ms (14.966ms without children)
+			ImportInProcess: 441.679ms
+			UpdateCategorizedAssets: 0.173ms
+		ReloadNativeAssets: 0.182ms
+		UnloadImportedAssets: 4.281ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.597ms
+		InitializingProgressBar: 0.242ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.005ms
+		OnDemandSchedulerStart: 0.787ms
+	PostProcessAllAssets: 2.067ms
+	Hotreload: 0.743ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.161ms
+	UnloadStreamsBegin: 0.005ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 13.200ms
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '59838' does not match file size '58178'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:57)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 57]
+
+Asset Pipeline Refresh (id=02b8e01e975b4464e82542c84f9848e2): Total: 0.059 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0369333 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:08.2148236Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '61548' does not match file size '60678'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0815902 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:08.3173313Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '63206' does not match file size '62336'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0559552 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:08.5232772Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '64335' does not match file size '63465'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0683607 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:08.6455555Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '65993' does not match file size '65123'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.084114 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:08.9031748Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '67650' does not match file size '66781'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0609748 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:09.0469772Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '69308' does not match file size '68438'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0605356 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:09.1695361Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab - (Force Reimport)(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T19:52:19.5249384Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:09.2290605Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:58)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 58]
+
+Refreshing native plugins compatible for Editor in 0.64 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1bd41d27bdb8f2941b26cec04a91a029): Total: 1.039 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=7, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1035 ms
+		Asset DB Callback time: managed=0 ms, native=2 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.003ms
+	InvokePackagesCallback: 0.003ms
+	ApplyChangesToAssetFolders: 0.691ms
+	Scan: 525.560ms
+	OnSourceAssetsModified: 0.007ms
+	CategorizeAssetsWithTransientArtifact: 0.067ms
+	ProcessAssetsWithTransientArtifactChanges: 0.111ms
+	CategorizeAssets: 5.804ms
+	ImportOutOfDateAssets: 491.989ms (24.925ms without children)
+		ImportManagerImport: 460.958ms (8.435ms without children)
+			ImportInProcess: 452.456ms
+			UpdateCategorizedAssets: 0.067ms
+		ReloadNativeAssets: 0.176ms
+		UnloadImportedAssets: 3.739ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.498ms
+		InitializingProgressBar: 0.129ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.004ms
+		OnDemandSchedulerStart: 0.559ms
+	PostProcessAllAssets: 2.359ms
+	Hotreload: 0.895ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.086ms
+	UnloadStreamsBegin: 0.004ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 11.353ms
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0329992 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:09.3167029Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '75156' does not match file size '73864'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0747147 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:09.406584Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '77657' does not match file size '76366'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0900031 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:09.5676146Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '80159' does not match file size '78867'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1208276 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:09.7895191Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '82661' does not match file size '81369'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1323648 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:10.0511632Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '84212' does not match file size '82920'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0841551 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:10.3385248Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '86714' does not match file size '85422'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0718386 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:10.4890977Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T20:08:09.2621063Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:10.5592758Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.PrefabUtility:SaveAsPrefabAsset_Internal (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string,bool&)
+UnityEditor.PrefabUtility:SaveAsPrefabAsset (UnityEngine.GameObject,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateEnemyPrefab (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.Material,UnityEngine.Material) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:393)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:62)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 62]
+
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f29bdf78d49e1dd44b4783d57aaf20f0): Total: 1.297 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=7, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=1292 ms
+		Asset DB Callback time: managed=0 ms, native=2 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.005ms
+	InvokePackagesCallback: 0.005ms
+	ApplyChangesToAssetFolders: 1.177ms
+	Scan: 629.838ms
+	OnSourceAssetsModified: 0.114ms
+	CategorizeAssetsWithTransientArtifact: 0.022ms
+	ProcessAssetsWithTransientArtifactChanges: 0.135ms
+	CategorizeAssets: 6.982ms
+	ImportOutOfDateAssets: 638.069ms (1.903ms without children)
+		ImportManagerImport: 628.339ms (14.648ms without children)
+			ImportInProcess: 613.569ms
+			UpdateCategorizedAssets: 0.122ms
+		ReloadNativeAssets: 0.274ms
+		UnloadImportedAssets: 4.707ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.171ms
+		InitializingProgressBar: 0.139ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.007ms
+		OnDemandSchedulerStart: 0.529ms
+	PostProcessAllAssets: 1.940ms
+	Hotreload: 0.947ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.154ms
+	UnloadStreamsBegin: 0.124ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 17.484ms
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '91431' does not match file size '89805'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:64)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 64]
+
+Asset Pipeline Refresh (id=afc63d1525eabab49855b2c365565b55): Total: 0.101 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1752379 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:10.7204269Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '93141' does not match file size '92271'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0543267 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:10.9587674Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '94799' does not match file size '93929'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0858269 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:11.1064228Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '96457' does not match file size '95587'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0946278 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:11.3053977Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '98115' does not match file size '97245'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1062778 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:11.509581Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '99772' does not match file size '98903'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0817127 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:11.718797Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '101429' does not match file size '100560'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0640676 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:11.8640287Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab - (Force Reimport)(modified date 2026-11-23T20:08:09.2621063Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:11.9291352Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:65)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 65]
+
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4d60f182beccb7945b0bac8931223e8f): Total: 1.267 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=7, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=1262 ms
+		Asset DB Callback time: managed=1 ms, native=2 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 0.004ms
+	ApplyChangesToAssetFolders: 1.018ms
+	Scan: 554.953ms
+	OnSourceAssetsModified: 0.008ms
+	CategorizeAssetsWithTransientArtifact: 0.070ms
+	ProcessAssetsWithTransientArtifactChanges: 0.119ms
+	CategorizeAssets: 6.274ms
+	ImportOutOfDateAssets: 686.239ms (1.432ms without children)
+		ImportManagerImport: 677.660ms (10.695ms without children)
+			ImportInProcess: 666.885ms
+			UpdateCategorizedAssets: 0.080ms
+		ReloadNativeAssets: 0.229ms
+		UnloadImportedAssets: 4.406ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.792ms
+		InitializingProgressBar: 0.108ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.006ms
+		OnDemandSchedulerStart: 0.607ms
+	PostProcessAllAssets: 2.359ms
+	Hotreload: 1.157ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.157ms
+	UnloadStreamsBegin: 0.003ms
+	UnloadStreamsEnd: 0.003ms
+	Untracked: 14.554ms
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 8 unused Assets / (8.6 KB). Loaded Objects now: 1145.
+Memory consumption went from 106.0 MB to 106.0 MB.
+Total: 17.992300 ms (FindLiveObjects: 0.204700 ms CreateObjectMapping: 0.074700 ms MarkObjects: 17.638200 ms  DeleteObjects: 0.071500 ms)
+
+[BambooHunterAssetBuilder] NavMesh successfully baked via Unity.AI.Navigation.NavMeshSurface!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BakeNavMeshForGround (UnityEngine.GameObject) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:580)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:435)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+(Filename: Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs Line: 580)
+
+Start importing Assets/BambooHunterAI/Scenes/BambooHunterDemoScene.unity using Guid(0b119a8e2cc204b499fe216bbf3ed62e) (DefaultImporter) -> (artifact id: 'b7a9e7a9705ef68f740f74f91964d026') in 0.0016744 seconds
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0353465 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:12.2616852Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '108714' does not match file size '107308'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0906325 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:12.3740664Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '111446' does not match file size '110040'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1251833 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:12.5983059Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '114178' does not match file size '112772'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1229336 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:12.8479146Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '116910' does not match file size '115504'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1623544 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:13.11867Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '119640' does not match file size '118236'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.070218 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:13.3522646Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '121306' does not match file size '119901'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1179487 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:13.5239086Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T20:08:09.2621063Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:13.6423119Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:SaveSceneInternal (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string,bool)
+UnityEditor.SceneManagement.EditorSceneManager:SaveScene (UnityEngine.SceneManagement.Scene,string)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:CreateDemoScene (JadeSeal.BambooHunter.BambooHunterSettings,UnityEngine.GameObject,UnityEngine.GameObject,JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder/MaterialSet) (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:503)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:69)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 69]
+
+Refreshing native plugins compatible for Editor in 1.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d02ad83de759d4642999cf133c727f59): Total: 1.424 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=8, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=1416 ms
+		Asset DB Callback time: managed=1 ms, native=4 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 0.003ms
+	ApplyChangesToAssetFolders: 1.033ms
+	Scan: 633.361ms
+	OnSourceAssetsModified: 0.102ms
+	CategorizeAssetsWithTransientArtifact: 0.027ms
+	ProcessAssetsWithTransientArtifactChanges: 0.218ms
+	CategorizeAssets: 7.357ms
+	ImportOutOfDateAssets: 756.876ms (1.318ms without children)
+		ImportManagerImport: 746.636ms (13.883ms without children)
+			ImportInProcess: 732.618ms
+			UpdateCategorizedAssets: 0.135ms
+		ReloadNativeAssets: 0.222ms
+		UnloadImportedAssets: 5.495ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 2.070ms
+		InitializingProgressBar: 0.134ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.008ms
+		OnDemandSchedulerStart: 0.993ms
+	PostProcessAllAssets: 4.934ms
+	Hotreload: 1.477ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.158ms
+	UnloadStreamsBegin: 0.330ms
+	UnloadStreamsEnd: 0.004ms
+	Untracked: 17.979ms
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '126286' does not match file size '124627'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0718733 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:13.7748345Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '127338' does not match file size '126547'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0771176 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:13.9243065Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '128840' does not match file size '128049'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.084819 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.1034355Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '130341' does not match file size '129551'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0728407 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.2677545Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '131843' does not match file size '131052'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0855994 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.4136734Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '132895' does not match file size '132104'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0917716 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.5957764Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '134397' does not match file size '133606'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0940491 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.7830379Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T20:08:13.7268386Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:14.8766985Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:73)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 73]
+
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e64a9072e7a933e4dbf8dfd8fa6bf68d): Total: 1.143 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=7, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1138 ms
+		Asset DB Callback time: managed=1 ms, native=2 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.003ms
+	InvokePackagesCallback: 0.003ms
+	ApplyChangesToAssetFolders: 0.778ms
+	Scan: 483.648ms
+	OnSourceAssetsModified: 0.117ms
+	CategorizeAssetsWithTransientArtifact: 0.015ms
+	ProcessAssetsWithTransientArtifactChanges: 0.081ms
+	CategorizeAssets: 4.309ms
+	ImportOutOfDateAssets: 596.572ms (1.194ms without children)
+		ImportManagerImport: 590.149ms (8.077ms without children)
+			ImportInProcess: 582.001ms
+			UpdateCategorizedAssets: 0.072ms
+		ReloadNativeAssets: 0.149ms
+		UnloadImportedAssets: 3.077ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.341ms
+		InitializingProgressBar: 0.094ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.004ms
+		OnDemandSchedulerStart: 0.563ms
+	PostProcessAllAssets: 2.070ms
+	Hotreload: 0.881ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.091ms
+	UnloadStreamsBegin: 0.004ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 54.134ms
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0236704 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.8966461Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '139557' does not match file size '138687'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1810283 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:14.9997923Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '141217' does not match file size '140347'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1471604 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:15.3293393Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '142877' does not match file size '142007'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0807501 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:15.6132021Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '144537' does not match file size '143667'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.1586414 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:15.7988645Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '146197' does not match file size '145327'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.130116 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.0833834Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '147856' does not match file size '146987'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0843218 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.3077969Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab - (Force Reimport)(modified date 2026-11-23T20:08:13.7268386Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:16.3929028Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:74)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 74]
+
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ad8af4cac381acb4fbcf6a99b8a73053): Total: 1.518 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=7, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=1 ms, native=1511 ms
+		Asset DB Callback time: managed=3 ms, native=1 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 0.003ms
+	ApplyChangesToAssetFolders: 1.011ms
+	Scan: 659.820ms
+	OnSourceAssetsModified: 0.009ms
+	CategorizeAssetsWithTransientArtifact: 0.076ms
+	ProcessAssetsWithTransientArtifactChanges: 0.129ms
+	CategorizeAssets: 6.582ms
+	ImportOutOfDateAssets: 830.302ms (1.354ms without children)
+		ImportManagerImport: 821.901ms (10.502ms without children)
+			ImportInProcess: 811.299ms
+			UpdateCategorizedAssets: 0.099ms
+		ReloadNativeAssets: 0.183ms
+		UnloadImportedAssets: 4.357ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.706ms
+		InitializingProgressBar: 0.132ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.007ms
+		OnDemandSchedulerStart: 0.664ms
+	PostProcessAllAssets: 4.644ms
+	Hotreload: 0.916ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.083ms
+	UnloadStreamsBegin: 0.002ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 14.916ms
+
+Start importing Assets/BambooHunterAI/Scenes/BambooHunterDemoScene.unity using Guid(0b119a8e2cc204b499fe216bbf3ed62e) (DefaultImporter) -> (artifact id: 'b7a9e7a9705ef68f740f74f91964d026') in 0.0019179 seconds
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0206869 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.4254744Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '153495' does not match file size '152625'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0794901 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.4909074Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '154626' does not match file size '153756'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0788818 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.6439238Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '156286' does not match file size '155416'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.079647 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.7931577Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '157416' does not match file size '156547'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0790225 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:16.9475918Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '159076' does not match file size '158206'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0839858 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:17.0973241Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+'Assets/BambooHunterAI/Evidence/UnityValidationLog.txt' Amount of processed bytes '160736' does not match file size '159866'
+Start importing Assets/BambooHunterAI/Evidence/UnityValidationLog.txt using Guid(075a1d86d0b286941953e7c38bce1ca1) (TextScriptImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0930971 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/bamboohunterai/evidence/unityvalidationlog.txt in SourceAssetDB has modification time of '2026-11-23T20:08:04.6102936Z' while content on disk has modification time of '2026-11-23T20:08:17.2530841Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Assets/BambooHunterAI/Prefabs/BambooHunterArrow.prefab(modified date 2026-11-23T20:08:06.3023124Z)
+Assets/BambooHunterAI/Prefabs/BambooHunterEnemy.prefab(modified date 2026-11-23T20:08:13.7268386Z)
+Assets/BambooHunterAI/Evidence/Deterministic.txt(modified date 2026-11-23T19:52:23.2626692Z)
+Assets/BambooHunterAI/Evidence/UnityValidationLog.txt(modified date 2026-11-23T20:08:17.3460985Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.AssetDatabase:ImportAsset (string,UnityEditor.ImportAssetOptions)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:75)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+[Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs line 75]
+
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6595a686f746f4b4e889e0abd7207da5): Total: 0.950 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=8, local cache=18446744073709551609, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=946 ms
+		Asset DB Callback time: managed=0 ms, native=1 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=257, non-scripts=771
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 4
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 0.003ms
+	ApplyChangesToAssetFolders: 0.833ms
+	Scan: 390.826ms
+	OnSourceAssetsModified: 0.006ms
+	CategorizeAssetsWithTransientArtifact: 0.022ms
+	ProcessAssetsWithTransientArtifactChanges: 0.103ms
+	CategorizeAssets: 5.092ms
+	ImportOutOfDateAssets: 537.892ms (1.108ms without children)
+		ImportManagerImport: 530.612ms (9.248ms without children)
+			ImportInProcess: 521.250ms
+			UpdateCategorizedAssets: 0.114ms
+		ReloadNativeAssets: 0.161ms
+		UnloadImportedAssets: 3.881ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.454ms
+		InitializingProgressBar: 0.099ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.005ms
+		OnDemandSchedulerStart: 0.572ms
+	PostProcessAllAssets: 2.065ms
+	Hotreload: 0.859ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.099ms
+	UnloadStreamsBegin: 0.003ms
+	UnloadStreamsEnd: 0.002ms
+	Untracked: 12.246ms
+
+[BambooHunterAssetBuilder] Build completed successfully! Scene built: True
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JadeSeal.BambooHunter.Editor.BambooHunterAssetBuilder:BuildAll () (at Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs:77)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:24)
+
+(Filename: Assets/BambooHunterAI/Editor/BambooHunterAssetBuilder.cs Line: 77)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (6.0 KB). Loaded Objects now: 1146.
+Memory consumption went from 107.4 MB to 107.4 MB.
+Total: 12.405800 ms (FindLiveObjects: 0.175900 ms CreateObjectMapping: 0.089400 ms MarkObjects: 12.088100 ms  DeleteObjects: 0.050100 ms)
+
+Loaded scene 'Library/Unused/b3520e67c5c1c684fafcf6a426d57342'
+	Deserialize:            0.700 ms
+	Integration:            0.345 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.112 ms
+	Total Operation Time:   1.159 ms
+Loaded scene 'Library/Unused/c792449efb001084fa8737299156ad89'
+	Deserialize:            1.236 ms
+	Integration:            0.177 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.077 ms
+	Total Operation Time:   1.493 ms
+Loaded scene 'Library/Unused/232a923c20e4ad14f93e6385b1179820'
+	Deserialize:            0.943 ms
+	Integration:            0.177 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.109 ms
+	Total Operation Time:   1.232 ms
+Opening scene 'Assets/BambooHunterAI/Scenes/BambooHunterDemoScene.unity'
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/BambooHunterAI/Scenes/BambooHunterDemoScene.unity'
+	Deserialize:            3.693 ms
+	Integration:            9.513 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.096 ms
+	Total Operation Time:   13.304 ms
+Unloading 3 unused Assets / (1.3 KB). Loaded Objects now: 1272.
+Memory consumption went from 104.0 MB to 104.0 MB.
+Total: 10.327300 ms (FindLiveObjects: 0.127800 ms CreateObjectMapping: 0.025900 ms MarkObjects: 10.129100 ms  DeleteObjects: 0.043100 ms)
+
+Loaded scene 'Library/Unused/57abd18c2c204c044a9f5230e4bf65d4'
+	Deserialize:            0.791 ms
+	Integration:            0.231 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.119 ms
+	Total Operation Time:   1.144 ms
+[BambooHunterValidation] All 255 deterministic tests PASSED successfully.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+JadeSeal.BambooHunter.Editor.BambooHunterValidation:RunFromMenu () (at Assets/BambooHunterAI/Editor/BambooHunterValidation.cs:34)
+
+(Filename: Assets/BambooHunterAI/Editor/BambooHunterValidation.cs Line: 34)
+
+Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-hp-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-hp channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0
