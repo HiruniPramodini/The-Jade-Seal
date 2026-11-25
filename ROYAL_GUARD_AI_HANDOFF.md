@@ -14,3 +14,14 @@ Scripts: `Assets/RoyalGuardAI/Scripts`, namespace `JadeSeal.RoyalGuard`. Targets
 
 The brain scores patrol, chase, search, cover, firing, reload and retreat. Visible targets update a timed last-seen position; hidden targets are searched at that remembered position. Low health prioritizes reachable cover. Reloading and firing use the assigned crossbow; firing stays selected during the interval between shots.
 
+In a separate test scene or unsaved Play Mode setup, verify:
+
+- Patrol paths and target detection, including walls and field-of-view boundaries.
+- Losing sight leads to the last-seen location, then patrol after memory expires.
+- Five hits consume a magazine; reload completes and shooting resumes.
+- Bolts ignore their shooter, hit walls and damage the demo target or guard health once.
+- Two guards cannot reserve the same cover; disabling or killing its occupant releases it.
+- Low-health retreat, unreachable cover, empty cover arrays and missing optional references produce no Console errors.
+
+Current limitations: cover has no peek/return cycle, animation or squad coordination; player aim uses a fixed one-meter height offset; human combat tuning and world integration remain outstanding. Moving cover or world geometry requires revalidation of navigation and firing lines.
+
