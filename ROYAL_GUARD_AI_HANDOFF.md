@@ -25,3 +25,8 @@ In a separate test scene or unsaved Play Mode setup, verify:
 
 Current limitations: cover has no peek/return cycle, animation or squad coordination; player aim uses a fixed one-meter height offset; human combat tuning and world integration remain outstanding. Moving cover or world geometry requires revalidation of navigation and firing lines.
 
+## Resumed work — 21 November 2026
+
+Fixed guard damage-interface integration, hidden-target chase information, null cover arrays, inactive cover availability, reservation release on disable, utility-score selection, emergency retreat priority, aim stability during shot cooldown, waypoint index bounds and physical shooter collision filtering. Updated projectile velocity to the Unity 6 API.
+
+Compilation was attempted but could not be completed: the sandbox denied access to the user NuGet configuration, and the requested elevated build was declined. No successful build or Play Mode result is claimed. The approved world scene, lighting and NavMesh were not edited. At that time, changes remained uncommitted.
