@@ -10,3 +10,7 @@ Scripts: `Assets/RoyalGuardAI/Scripts`, namespace `JadeSeal.RoyalGuard`. Targets
 4. Add `RoyalGuardCoverPoint` objects at reachable standing positions behind solid obstacles and assign them to the brain. Give each guard sufficient space. Cover is reserved by one active guard and released on disable, death or a transition away from combat. Optional peek transforms are currently metadata; firing from a separate peek position is not implemented.
 5. For a disposable test player, add `RoyalGuardPlayerHealthDemo`. For the actual player, implement `IRoyalGuardDamageable.TakeDamage(float)` on a component on the hit collider or a parent. Guard health also implements this interface. Team filtering is not implemented, so bolts can damage other guards.
 
+## Behavior and validation
+
+The brain scores patrol, chase, search, cover, firing, reload and retreat. Visible targets update a timed last-seen position; hidden targets are searched at that remembered position. Low health prioritizes reachable cover. Reloading and firing use the assigned crossbow; firing stays selected during the interval between shots.
+
