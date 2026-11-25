@@ -58,7 +58,7 @@ The team has **four members**, each responsible for a distinct autonomous agent.
 | **Royal Guard** | Utility AI, weighted cover evaluation, Unity NavMesh | Heavily armored ranged crossbow enemy | Royal Guard contributor — name to confirm | Implemented and module-tested on `feature/royal-guard-ai`; world integration pending |
 | Agent 2 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned; implementation not found |
 | Agent 3 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned; implementation not found |
-| Agent 4 — name to confirm | Not verified | To be confirmed | Member name to confirm | Planned; implementation not found |
+| **Mountain Archer** | 	Finite State Machine (FSM), tactical position search, Unity NavMesh| Long-range bow-and-arrow enemy with 360° detection and tactical repositioning | Mountain archer to confirm | Implemented; latest integration and testing pending verification |
 
 The existing `feature/Models` branch contains `player.fbx`, `guard.fbx`, `bamboo.fbx` and `MA.fbx`. These filenames and model commits do not establish AI behavior, agent identities, rig/animation readiness or asset clearance. Do not infer the other agents' abilities from them.
 
