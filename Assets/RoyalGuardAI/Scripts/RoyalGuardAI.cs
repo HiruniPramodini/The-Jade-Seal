@@ -122,5 +122,14 @@ namespace JadeSeal.Archery
 
             Go(goal, patrolSpeed);
         }
+        private float Face(Vector3 direction, float offset = 0f)
+        {
+            direction.y = 0f;
+            if (direction.sqrMagnitude < 0.001f) return 0f;
+            var desired = Quaternion.LookRotation(direction) * Quaternion.Euler(0f, offset, 0f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desired, turnSpeed * Time.deltaTime);
+            return Quaternion.Angle(transform.rotation, desired);
+        }
     }
 }
+
