@@ -106,18 +106,34 @@ namespace JadeSeal.Archery
             agent.ResetPath();
         }
 
-        private void ExecutePatrol()
+        private void Patrol(float progress)
         {
             if (route.Length < 2 || finishedPatrol)
             {
                 Stop();
+                Play(State.Idle);
                 return;
             }
 
             Vector3 goal = route[waypoint];
+            if (CurrentState == State.PatrolTurn)
+            {
+                float angle = Face(goal - transform.position);
+                if (angle <= 5f && progress >= 0.9f)
+                {
+                    Go(goal, patrolSpeed);
+                    Play(State.PatrolWalk);
+                }
+                return;
+            }
             if (At(goal))
             {
                 Stop();
+                if (CurrentState != State.Idle)
+                {
+                    waitUntil = Time.time + waypointPause;
+                    Play(State.Idle);
+                }
                 if (Time.time < waitUntil) return;
 
                 visited++;
@@ -127,11 +143,13 @@ namespace JadeSeal.Archery
                     return;
                 }
                 waypoint = (waypoint + (reversePatrol ? route.Length - 1 : 1)) % route.Length;
-                waitUntil = Time.time + waypointPause;
+                Play(State.PatrolTurn);
                 return;
             }
 
             Go(goal, patrolSpeed);
+            Face(agent.isOnNavMesh ? agent.desiredVelocity : goal - transform.position);
+            Play(State.PatrolWalk);
         }
         private float Face(Vector3 direction, float offset = 0f)
         {
