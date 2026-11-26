@@ -172,7 +172,110 @@ namespace JadeSeal.Archery
             stateStarted = Time.time;
             animator.Play(StateHashes[(int)state], 0, 0f);
         }
+        [SerializeField, Min(0)] private float coverHoldTime = 1.5f;
+        [SerializeField, Min(0)] private float reCoverCooldown = 2f;
+        [SerializeField, Min(0)] private float coverSearchRadius = 12f;
+        [SerializeField] private bool seekCoverOnDetection;
+        [SerializeField] private LayerMask sightMask = ~0;
+
+        private GuardCoverPoint cover;
+        private Vector3 hide, peek;
+        private bool movingToPeek, coverRequested;
+        private float nextCoverSearch;
+
+        private void ReleaseCover()
+        {
+            if (cover)
+            {
+                cover.Release(this);
+                nextCoverSearch = Time.time + reCoverCooldown;
+            }
+            cover = null;
+            movingToPeek = false;
+        }
+
+        private bool ChooseCover()
+        {
+            if (cover) return true;
+            GuardCoverPoint bestPoint = null;
+            Vector3 bestHide = default, bestPeek = default;
+            float bestCost = float.PositiveInfinity;
+            var candidates = GuardCoverPoint.Active;
+            for (int i = 0; i < candidates.Count; i++)
+            {
+                var point = candidates[i];
+                if ((point.transform.position - transform.position).sqrMagnitude > coverSearchRadius * coverSearchRadius)
+                    continue;
+                if (!point.TryPlan(this, agent, player, sightMask, candidatePath, out var hidePos, out var peekPos))
+                    continue;
+                float cost = (transform.position - hidePos).sqrMagnitude + 0.35f * (peekPos - hidePos).sqrMagnitude;
+                if (cost < bestCost)
+                {
+                    bestCost = cost;
+                    bestPoint = point;
+                    bestHide = hidePos;
+                    bestPeek = peekPos;
+                }
+            }
+            if (!bestPoint) return false;
+            bestPoint.Reserve(this);
+            cover = bestPoint;
+            hide = bestHide;
+            peek = bestPeek;
+            movingToPeek = false;
+            Go(hide, patrolSpeed * 1.3f);
+            Play(State.MoveToCover);
+            return true;
+        }
+
+        private bool CoverSequence(float progress)
+        {
+            if (!cover) return false;
+            switch (CurrentState)
+            {
+                case State.MoveToCover:
+                    if (At(hide))
+                    {
+                        Stop();
+                        Play(State.TakeCover);
+                    }
+                    else
+                    {
+                        Go(hide, patrolSpeed * 1.3f);
+                        Face(agent.isOnNavMesh ? agent.desiredVelocity : hide - transform.position);
+                    }
+                    return true;
+                case State.TakeCover:
+                    if (progress >= 0.94f)
+                    {
+                        waitUntil = Time.time + coverHoldTime;
+                        Play(State.CoverIdle);
+                    }
+                    return true;
+                case State.CoverIdle:
+                    if (Time.time >= waitUntil)
+                    {
+                        Go(peek, patrolSpeed);
+                        Play(State.Emerge);
+                    }
+                    return true;
+                case State.Emerge:
+                    if (At(peek))
+                    {
+                        Stop();
+                        Play(State.AimIdle);
+                    }
+                    else
+                    {
+                        Go(peek, patrolSpeed);
+                        Face(agent.isOnNavMesh ? agent.desiredVelocity : peek - transform.position);
+                    }
+                    return true;
+            }
+            return false;
+        }
     }
 }
+
 
 
