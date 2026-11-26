@@ -20,11 +20,14 @@ namespace JadeSeal.Archery
         [SerializeField, Min(1)] private float turnSpeed = 270f;
         [SerializeField] private bool reversePatrol;
         [SerializeField] private bool patrolLoop = true;
+        [SerializeField, Min(1)] private float combatLeash = 20f;
 
         private EnemyHealth health;
         private NavMeshAgent agent;
         private Vector3 home;
         private Vector3[] route;
+        private NavMeshPath candidatePath;
+        private readonly Vector3[] corners = new Vector3[32];
         private int waypoint;
         private float waitUntil;
 
@@ -46,6 +49,7 @@ namespace JadeSeal.Archery
             if (!agent.isOnNavMesh && NavMesh.SamplePosition(transform.position, out var ground, 1.5f, Filter))
                 agent.Warp(ground.position);
             home = transform.position;
+            candidatePath = new NavMeshPath();
 
             var points = new System.Collections.Generic.List<Vector3>();
             if (patrolPoints != null)
@@ -53,6 +57,18 @@ namespace JadeSeal.Archery
                     if (point) points.Add(point.position);
             route = points.ToArray();
             waitUntil = Time.time + waypointPause;
+        }
+
+        // Mathematical path array evaluation
+        private bool WithinLeash(Vector3 position) => (position - home).sqrMagnitude <= combatLeash * combatLeash;
+
+        private bool PathInsideLeash()
+        {
+            int count = candidatePath.GetCornersNonAlloc(corners);
+            if (count == corners.Length) return false;
+            for (int i = 0; i < count; i++)
+                if (!WithinLeash(corners[i])) return false;
+            return true;
         }
     }
 }
