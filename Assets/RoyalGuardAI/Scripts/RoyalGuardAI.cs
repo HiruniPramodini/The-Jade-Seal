@@ -9,6 +9,17 @@ namespace JadeSeal.Archery
     [RequireComponent(typeof(EnemyHealth), typeof(NavMeshAgent), typeof(CapsuleCollider))]
     public sealed class RoyalGuardAI : MonoBehaviour
     {
+        public enum State
+        {
+            Idle, PatrolWalk, PatrolTurn, WeaponRaise, AimIdle, AimWalk, AimWalkBackward,
+            Fire, MoveToCover, TakeCover, CoverIdle, Emerge, HitReaction, WeaponLower, Death
+        }
+
+        private static readonly int[] StateHashes = System.Array.ConvertAll(
+            (State[])System.Enum.GetValues(typeof(State)), value => Animator.StringToHash("Base Layer." + value));
+
+        public State CurrentState { get; private set; }
+        private float stateStarted;
         [SerializeField] private Animator animator;
         [SerializeField] private Transform boltSpawnPoint;
         [SerializeField] private ArrowProjectile bolt;
@@ -130,6 +141,20 @@ namespace JadeSeal.Archery
             transform.rotation = Quaternion.RotateTowards(transform.rotation, desired, turnSpeed * Time.deltaTime);
             return Quaternion.Angle(transform.rotation, desired);
         }
+        private float Progress()
+        {
+            var state = animator.IsInTransition(0) ? animator.GetNextAnimatorStateInfo(0) : animator.GetCurrentAnimatorStateInfo(0);
+            return state.fullPathHash == StateHashes[(int)CurrentState] ? state.normalizedTime : 0f;
+        }
+
+        private void Play(State state)
+        {
+            if (CurrentState == state) return;
+            CurrentState = state;
+            stateStarted = Time.time;
+            animator.Play(StateHashes[(int)state], 0, 0f);
+        }
     }
 }
+
 
