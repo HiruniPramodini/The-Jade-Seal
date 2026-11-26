@@ -24,12 +24,13 @@ namespace JadeSeal.Archery
 
         private EnemyHealth health;
         private NavMeshAgent agent;
-        private Vector3 home;
+        private Vector3 home, destination;
         private Vector3[] route;
         private NavMeshPath candidatePath;
         private readonly Vector3[] corners = new Vector3[32];
-        private int waypoint;
+        private int waypoint, visited;
         private float waitUntil;
+        private bool finishedPatrol;
 
         private NavMeshQueryFilter Filter => new() { agentTypeID = agent.agentTypeID, areaMask = agent.areaMask };
 
@@ -59,7 +60,6 @@ namespace JadeSeal.Archery
             waitUntil = Time.time + waypointPause;
         }
 
-        // Mathematical path array evaluation
         private bool WithinLeash(Vector3 position) => (position - home).sqrMagnitude <= combatLeash * combatLeash;
 
         private bool PathInsideLeash()
@@ -69,6 +69,58 @@ namespace JadeSeal.Archery
             for (int i = 0; i < count; i++)
                 if (!WithinLeash(corners[i])) return false;
             return true;
+        }
+
+        private bool Go(Vector3 goal, float speed)
+        {
+            if (!agent.isOnNavMesh) return false;
+            if (!agent.isStopped && (agent.hasPath || agent.pathPending) && (goal - destination).sqrMagnitude < 0.08f)
+                return true;
+            if (!agent.CalculatePath(goal, candidatePath) || candidatePath.status != NavMeshPathStatus.PathComplete ||
+                !PathInsideLeash()) return false;
+            agent.speed = speed;
+            agent.isStopped = false;
+            if (!agent.SetPath(candidatePath)) return false;
+            destination = goal;
+            return true;
+        }
+
+        private bool At(Vector3 goal) =>
+            (transform.position - goal).sqrMagnitude <= Mathf.Pow(waypointStoppingDistance + 0.15f, 2f);
+
+        private void Stop()
+        {
+            if (!agent.isOnNavMesh || agent.isStopped) return;
+            agent.isStopped = true;
+            agent.ResetPath();
+        }
+
+        private void ExecutePatrol()
+        {
+            if (route.Length < 2 || finishedPatrol)
+            {
+                Stop();
+                return;
+            }
+
+            Vector3 goal = route[waypoint];
+            if (At(goal))
+            {
+                Stop();
+                if (Time.time < waitUntil) return;
+
+                visited++;
+                if (!patrolLoop && visited >= route.Length)
+                {
+                    finishedPatrol = true;
+                    return;
+                }
+                waypoint = (waypoint + (reversePatrol ? route.Length - 1 : 1)) % route.Length;
+                waitUntil = Time.time + waypointPause;
+                return;
+            }
+
+            Go(goal, patrolSpeed);
         }
     }
 }
